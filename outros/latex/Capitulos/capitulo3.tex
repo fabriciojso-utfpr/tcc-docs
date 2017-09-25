@@ -1,5 +1,103 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % CAPÍTULO 3
-\chapter{DESENVOLVIMENTO}  
+\chapter{Proposta}
+Este capítulo apresenta a proposta de desenvolvimento de um sistema web, capaz de auxiliar na criação e divulgação de conteúdos que interage com o usuário que o acessa. Para facilitar a compreensão utilizaremos o nome de \textbf{aplicativo} para definir este tipo de conteúdo. 
+
+\section{Funcionalidades do sistema}
+A visão geral do sistema proposto está exemplificado na Figura \ref{visualgeral}.
+ \begin{figure}[!htb]
+ 		\centering
+	\includegraphics[width=1\textwidth]{./Figuras/visao-geral.png} % <- formatos PNG, JPG e PDF
+	\caption[Visão geral das funcionalidades do sistema]{Visão geral das funcionalidades do sistema divido por atores}
+	\fonte{Autoria própria}
+	\label{visualgeral}
+\end{figure}
 
 
+\subsection{Inserção de Aplicativo}
+Um aplicativo é composto por diversos atributos e componentes, no qual o criador de conteúdo poderá utilizá-los para personalizar a construção da imagem, incluindo fundos, textos e fotos do usuário.
+
+A Figura \ref{tabela1} mostra os campos que são necessários para a criação de um aplicativo.
+ \begin{figure}[!htb]
+	\centering
+	\includegraphics[width=1\textwidth]{./Figuras/tabela1.png} % <- formatos PNG, JPG e PDF
+	\caption[Atributos do Aplicativo]{Atributos do Aplicativo}
+	\fonte{Autoria própria}
+	\label{tabela1}
+\end{figure}
+
+A Figura \ref{tabela2}, mostra os componentes que podem ser usados para a personalização da imagem, onde é possível inserir diversos fundos, grupos de textos e fotos do usuário. Na constituição da imagem os fundos e os textos vão variar de forma randômica, de acordo com os filtros incluso pelo criador.
+ \begin{figure}[!htb]
+	\centering
+	\includegraphics[width=1\textwidth]{./Figuras/tabela2.png} % <- formatos PNG, JPG e PDF
+	\caption[Visão geral das funcionalidades do sistema]{Visão geral das funcionalidades do sistema divido por atores}
+	\fonte{Autoria própria}
+	\label{tabela2}
+\end{figure}
+
+A Figura \ref{tabela3} usa tabelas para descrever os componentes de forma mais detalhada. As tabelas em vermelho, são parte de um componente, já as azuis são o componente.
+ \begin{figure}[!htb]
+	\centering
+	\includegraphics[width=1\textwidth]{./Figuras/tabela3.png} % <- formatos PNG, JPG e PDF
+	\caption[Visão geral das funcionalidades do sistema]{Visão geral das funcionalidades do sistema divido por atores}
+	\fonte{Autoria própria}
+	\label{tabela3}
+\end{figure}
+\clearpage
+As Figuras \ref{prototipo3}, \ref{prototipo4}, \ref{prototipo5}, \ref{prototipo6} são os protótipos de tela da inserção do aplicativo. Com essas telas é possível ver o funcionamento da inserção de aplicativo.
+\begin{figure}[!htb]	
+	\centering
+	\includegraphics[width=0.8\textwidth]{./Figuras/prototipo3.png} % <- formatos PNG, JPG e PDF
+	\caption[Protótipo da tela de inserção de aplicativo - Fundos]{Protótipo da tela de inserção de aplicativo - Componente Fundos}
+	\fonte{Autoria própria}
+	\label{prototipo3}
+
+	\centering
+	\includegraphics[width=1\textwidth]{./Figuras/prototipo4.png} % <- formatos PNG, JPG e PDF
+	\caption[Protótipo da tela de inserção de aplicativo - Fundos]{Protótipo da tela de inserção de aplicativo - Componente Fundos}
+	\fonte{Autoria própria}
+	\label{prototipo4}
+\end{figure}
+
+\begin{figure}[!ht]	
+	\centering
+	\includegraphics[width=1\textwidth]{./Figuras/prototipo5-1.png} % <- formatos PNG, JPG e PDF
+	\includegraphics[width=1\textwidth]{./Figuras/prototipo5-2.png} % <- formatos PNG, JPG e PDF
+	\caption[Visão geral das funcionalidades do sistema]{Visão geral das funcionalidades do sistema divido por atores}
+	\fonte{Autoria própria}
+	\label{prototipo5}
+
+	\centering
+	\includegraphics[width=1\textwidth]{./Figuras/prototipo6-1.png} % <- formatos PNG, JPG e PDF
+	\includegraphics[width=1\textwidth]{./Figuras/prototipo6-2.png} % <- formatos PNG, JPG e PDF
+	\includegraphics[width=1\textwidth]{./Figuras/prototipo6-3.png} % <- formatos PNG, JPG e PDF
+	\caption[Visão geral das funcionalidades do sistema]{Visão geral das funcionalidades do sistema divido por atores}
+	\fonte{Autoria própria}
+	\label{prototipo6}
+\end{figure}
+
+\clearpage
+\subsection{Divulgação de Aplicativo}
+Para auxilar na divulgação, o sistema irá construir a imagem usando dados definidos na aplicação para simular um usuário real. E irá disponibilizar uma URL para que o criador possa postar em sua rede social.
+
+\subsection{Construção e acesso a imagem}
+A construção da imagem é a fase onde o sistema integra os dados do usuário com a personalização definida na inserção do aplicativo.
+
+A Figura \ref{prototipo1} mostra o protótipo da visualização do aplicativo, nele é possível ver onde estará os atributos de visualização (titulo, texto e imagem de chamada) e um espaço para a inclusão de anúncios. O botão "Ver resultado" será usado para iniciar o processamento da imagem, iniciando com a autenticação com o Facebook Login e depois enviando os dados como nome, data de aniversário e fotos para o sistema realizar a construção.
+
+ \begin{figure}[!htb]
+	\centering
+	\includegraphics[width=0.9\textwidth]{./Figuras/protitipo1.png} % <- formatos PNG, JPG e PDF
+	\caption[Protótipo da tela de visualização do aplicativo]{Protótipo de visualização do aplicativo}
+	\fonte{Autoria própria}
+	\label{prototipo1}
+\end{figure}
+
+Depois de construir a imagem o sistema irá redirecionar o usuário para visualizar a mesma. Nessa tela irá conter a imagem gerada, um botão para gerar novamente e outro para que o usuário possa compartilhar em seu Facebook, como mostra na Figura \ref{prototipo2}.
+
+ \begin{figure}[!htb]
+	\centering
+	\includegraphics[width=1\textwidth]{./Figuras/protitipo2.png} % <- formatos PNG, JPG e PDF
+	\caption[Protótipo da tela de visualização da imagem construída]{Protótipo da tela de visualização da imagem construída}
+	\fonte{Autoria própria}
+	\label{prototipo2}
+\end{figure}

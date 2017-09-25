@@ -35,22 +35,22 @@
 \diretoria{Diretoria de Graduação e Educação Profissional}
 \departamento{Departamento de Computação}
 
-\documento{Trabalho de Conclusão de Curso} % [Disserta\c{c}\~ao] ou [Tese]
+\documento{Proposta de Trabalho de Conclusão de Curso} % [Disserta\c{c}\~ao] ou [Tese]
 \nivel{Graduação} % [Graduação] ou [Mestrado] ou [Doutorado]
 \titulacao{Bacharel} % [Tecnólogo] ou [Bacharel] ou [Engenheiro] ou [Mestre] ou [Doutor]
 
-\titulo{Plataforma para criação e monetização de conteúdos virais} % titulo do trabalho em portugues
+\titulo{Sistema para criação, divulgação e monetização de conteúdos virais} % titulo do trabalho em portugues
 \title{Title in English} % titulo do trabalho em ingles
 
 \autor{Fabricio Jhonata Sousa de Oliveira} % autor do trabalho
-\cita{OLIVEIRA, Fabricio Jhonata Sousa} % sobrenome (maiusculas), nome do autor do trabalho
+\cita{OLIVEIRA, Fabricio} % sobrenome (maiusculas), nome do autor do trabalho
 
 \palavraschave{saas, plataforma, monetização, facebook} % palavras-chave do trabalho
 \keywords{saas, facebook} % palavras-chave do trabalho em ingles
 
 \comentario{Trabalho de conclusão de curso de graduação apresentado à disciplina Trabalho de Conclusão de Curso 1, do Curso Superior de Engenharia de Software da Universidade Tecnológica Federal do Paraná, Câmpus Cornélio Procópio como avaliação para obtenção do título de Bacharel em Engenharia de Software.}
 
-\orientador{Diogo Cezar Teixeira Batista} % nome do orientador do trabalho
+\orientador{Prof. Me. Diogo Cezar Teixeira Batista} % nome do orientador do trabalho
 %\orientador[Orientadora:]{Nome da Orientadora} % <- no caso de orientadora, usar esta sintaxe
 %\coorientador{Nome do Co-orientador} % nome do co-orientador do trabalho, caso exista
 %\coorientador[Co-orientadora:]{Nome da Co-orientadora} % <- no caso de co-orientadora, usar esta sintaxe
@@ -103,31 +103,28 @@
 	
 	% listas (opcionais, mas recomenda-se a partir de 5 elementos)
 	\listadefiguras % geracao automatica da lista de figuras
-	\listadetabelas % geracao automatica da lista de tabelas
-	\listadesiglas % geracao automatica da lista de siglas
-	\listadesimbolos % geracao automatica da lista de simbolos
+	%\listadetabelas % geracao automatica da lista de tabelas
+	%\listadesiglas % geracao automatica da lista de siglas
+	%\listadesimbolos % geracao automatica da lista de simbolos
 	
 	% sumario (OBRIGATÓRIO)
 	\sumario % geracao automatica do sumario
-	
-	%---------- Inicio do Texto ----------
-	% recomenda-se a escrita de cada capitulo em um arquivo texto separado (exemplo: intro.tex, fund.tex, exper.tex, concl.tex, etc.) e a posterior inclusao dos mesmos no mestre do documento utilizando o comando \input{}, da seguinte forma:
-	%\input{intro.tex}
-	%\input{fund.tex}
-	%\input{exper.tex}
-	%\input{concl.tex}
+
 	
 	%---------- Introdução
 	\include{./Capitulos/capitulo1}
 	
 	%---------- Fundamentação
 	\include{./Capitulos/capitulo2}
+
+	%---------- Proposta
+	\include{./Capitulos/capitulo3}
 	
-	%\include{./Capitulos/capitulo3}
-	%---------- Resultados
-	%\include{./Capitulos/capitulo4}
-	%---------- Conclusão
-	%\include{./Capitulos/capitulo5}
+	%---------- Metodologia de desenvolvimento 
+	\include{./Capitulos/capitulo4}
+	
+	%---------- Considerações Finais
+	\include{./Capitulos/capitulo5}
 	
 	
 	%---------- Referencias ----------
