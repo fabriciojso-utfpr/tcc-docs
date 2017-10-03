@@ -1,9 +1,55 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % CAPÍTULO 2
 \chapter{FUNDAMENTAÇÃO TEÓRICA}  
-\section{Facebook API}
-\section{Laravel}
-\section{Cache de Banco de Dados}
-\section{Storage}
-\section{Cloud Computing}
-\section{Trabalhos relacionados}
+\section{Web 2.0}
+O conceito de \textit{Web} 2.0 foi criado por \cite{Oreilly2007}, para definir as transformações que estavam acontecendo com os serviços da web, na qual a  \textit{Internet} passou ser considerada uma plataforma social, permitindo aos os usuários interagir com os serviços da web. \cite{AmyShuen2008}.
+
+A  \textit{Web} 2.0 remete a um novo formato de ferramentas e serviços, que permitem os usuários publicar conteúdos na  \textit{web}, já que anteriormente essa prática era feita apenas por empresas, profissionais da área e entusiastas. Portanto a principal característica das funcionalidades que surgiram com a  \textit{Web} 2.0 é a possibilidade de serem utilizadas para compartilhar informações na \textit{web}. Esses conceitos foram a base para o surgimento de  \textit{blogs}, redes sociais, entre outros. As principais características da \textit{Web} 2.0 são a identidade, presença, comunicação, relacionamento e troca de informações, na qual a finalidade é aumentar e estimular a participação dos usuários na  \textit{internet}, fazendo com que os serviços \textit{web} ao fazer uso desta da inteligencia coletiva, se tornem cada vez melhores quanto mais usados por seus usuários, que é uma das principais características das redes sociais. \cite{Cooke2008}
+
+\section{Redes Sociais}
+Com surgimento da Web 2.0, os avanços tecnológicos, o surgimento dos dispositivos moveis e aumento da banda larga, as redes sociais se tornaram parte do dia-a-dia de muitos indivíduos. Em resumo, as redes sociais são sites que contém ferramentas para que seus usuários se comunique, compartilhem conhecimentos, ideias, interesses e informações pessoas como: fotos, vídeos, relacionamentos, e outros. As redes sociais são uma das grandes mídias de influencia da atualidade, já que os seus usuários além de leitores, são também os produtores de conteúdo dessas redes \cite{Abedniya2010, Trusov2009}.
+
+O crescimento acelerado das redes sociais, resultou em uma maior facilidade para a obtenção de dados dos usuários, fazendo com que seja possível a criação de produtos e serviços personalizados para um publico-alvo ou até mesmo para um usuário especifico \cite{Hartline2008}.
+Contudo, as redes sociais facilitam a comunicação dos usuários, com funcionalidades colaborativa que permitem a interação dos mesmos. Já para as empresas as redes sociais são uma   das ferramentas mais importante para a comunicação e extração de dados.
+
+\subsection{Facebook}
+O Facebook é uma rede social que foi lançada em Fevereiro de 2004 e atualmente conta com 2 bilhões de usuários. No inicio foi disponibilizada apenas para alunos de Harvard, mas em 2006 ficou disponível para todo o mundo, sendo necessário apenas ter um e-mail válido e ter idade superior a 13 anos. O Facebook permite que seus usuários compartilhe suas informações pessoais como: idade, cidade atual, fotos, textos, crenças e outros, também disponibiliza um chat em tempo real para que seus usuários possam se comunicar de forma instantânea com os seus amigos. Também é possível criar eventos, convidar amigos ou ser convidado podendo informar se irá comparecer ou não ao evento \cite{Facebook}.
+
+Um recurso importante para este trabalho é a ferramenta Facebook Pages, com ela é possível que um usuário ou empresa desenvolva páginas personalizadas dentro do Facebook. Essa ferramenta permite inserir imagens, vídeos, textos, links e outros, também é possível que os usuários do Facebook a página, para que eles possam acompanhar suas publicações. Uma funcionalidade importante do Facebook Pages é a possibilidade de ser gerenciada por diversos usuários, permitindo assim a administração de uma página feito por uma equipe\cite{Facebook}. Outra funcionalidade que as Facebook Pages permite é o acesso as estatísticas dos usuários que seguem sua página, 
+com esses dados é possível analisar a faixa-etaria, genero, país, cidade e idioma como mostra a Figura \ref{pages1}. Também é possível ter uma visão geral  da sua página como visualizações, curtidas, alcance, evolvimento e outros como mostra a Figura \ref{pages2}.
+
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=1\textwidth]{./Figuras/facebook-pages2.png} % <- formatos PNG, JPG e PDF
+	\caption[Facebook Pages - Relatório - Resumo da Página]{Relatório gerado na ferramenta Facebook Pages: Visão geral}
+	\fonte{Atoria própria (2017), a partir da análise da página Otariano}%\footnote[2]{https://www.facebook.com/humotariano/}}
+	\label{pages1}
+\end{figure}
+\clearpage
+
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=1\textwidth]{./Figuras/facebook-pages1.png} % <- formatos PNG, JPG e PDF
+	\caption[Facebook Pages - Relatório - Pessoas]{Relatório gerado na ferramenta Facebook Pages: Seguidores da Página}
+	\fonte{Atoria própria (2017), a partir da análise da página Otariano}%\footnote[2]{https://www.facebook.com/humotariano/}}
+	\label{pages2}
+\end{figure}
+
+Páginas do Facebook com milhares seguidores conseguem alcançar milhões de pessoas mensalmente, a Figura \ref{pages2} mostra o alcance de 69 milhões entre 4 de setembro a 1 de outubro. Com todo esse alcance é possível a criação de diversos conteúdos virais ou enviar um grande número de usuários para um site, blog ou qualquer serviço web que seja acessível a partir de um link.
+
+\section{Marketing Viral}
+O termo \textit{"Marketing Viral"} é usado para descrever estratégias para encorajar usuários de redes sociais a disseminar um conteúdo, fazendo com que a exposição e influencia do mesmo seja exponencial \cite{Camarero2011}. 
+
+O marketing viral vem sendo utilizado nas redes sociais, por empresas e organizações que tentam alcançar e atrair usuários. A palavra "marketing"  remete a ideia de divulgar uma mensagem ou produto. Já  a palavra "viral"  faz paralelo com a transmissão de um vírus, que é passada de pessoa pra pessoa de forma rápida. Surge então a expressão "Marketing Viral" com a ideia de repassar uma mensagem de pessoa pra pessoa de forma exponencial \cite{Barichello2010}.
+Com o uso do Marketing Viral é possível transformar a divulgação de um conteúdo em uma epidemia, pois alguns conteúdos são como vírus, possuem a capacidade de contagiar os usuários. Com a ajuda das ferramentas que as redes sociais disponibilizam essa "epidemia" pode se espalhar de forma mais simples e rápida \cite{PEROTTONI2010, Castro2012}.
+
+Porém a viralização é um fenômeno imprevisível, mesmo com a criação de conteúdos focados para se tornar um viral e com o uso de ferramentas que auxiliam a criação de um viral não é possível garanti-la. Criar uma campanha que tome grandes proporções não é algo simples, pois o sucesso do viral depende exclusivamente do público, "Quanto mais envolvente e interessante for a
+mensagem, maiores são as chances de o anúncio se espalhar com sucesso e maior será a rede
+de contatos criada por ele para reenvio da mensagem". Uma das formas de aumentar as chances de um conteúdo viralizar é facilitar o processo de compartilhamento, como incluir ferramentas que integram a rede social com o blog, site, etc. Marketing Viral é uma forma de divulgação com um grande alcance e de baixo custo, com a entrega rápida da mensagem desejada para miliares de usuários. \cite{Barichello2010}.
+
+
+
+
+
+
+\section{Trabalhos Relacionados}
