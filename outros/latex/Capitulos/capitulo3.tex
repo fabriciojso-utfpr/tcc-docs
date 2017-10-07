@@ -1,23 +1,53 @@
 % CAPÍTULO 3
-\chapter{Proposta}
-Este capítulo apresenta a proposta de desenvolvimento de um sistema \textit{web}, capaz de auxiliar na criação e divulgação de conteúdos que interage com o usuário que o acessa. Para facilitar a compreensão utilizaremos o nome de \textbf{aplicativo} para definir este tipo de conteúdo. 
+
+\chapter{Metodologia}
+
 
 \section{Tecnologias e Ferramentas}
 
 \subsection{PHP}
-O sistema \textit{web} será desenvolvido utilizando a linguagem PHP, por ser uma linguagem rica em recursos e amplamente consolidada no desenvolvimento \textit{web}.
+O sistema \textit{web} será desenvolvido utilizando a linguagem PHP, por ser uma linguagem rica em recursos e amplamente consolidada no desenvolvimento \textit{web}. O PHP 7 é a nova versão da linguagem e que será utilizada para desenvolver essa proposta, trouxe um salto de \textit{performance} entre 10 a 25\% em comparação com sua versão anterior. Também trouxe melhorias como uso otimizado de memória, classes anonimas, possibilidade do tratamento de erros fatais, entre outros. Com esse avanço a linguagem aumentou sua confiabilidade para o desenvolvimento de softwares de grande porte \cite{Otemuyiwa2015, Saggio2016}.
 
 \subsection{Laravel}
-Em conjunto com o PHP será utilizado o Laravel, um \textit{framework} PHP voltado para o desenvolvimento web. O \textit{framework} que utiliza a arquitetura \textit{Model-View-Controller} e o seu principal atributo é ajudar a desenvolver com alto desempenho de forma rápida. O Laravel incentiva o uso de boas práticas de programação e utiliza as PSR (PHP \textit{Standards Recommendations}) como guia para estilo de escrita do código. Para a criação da camada \textit{View}, o Laravel utiliza uma \textit{Engine} de \textit{template} chamada Blade, que traz uma gama de ferramentas que ajudam a criar interfaces de forma rápida e evitar a duplicação de código. Para se comunicar com um Banco de Dados o Laravel utiliza uma implementação simples do \textit{ActiveRecord} chamada de Eloquent ORM (\textit{Object Relational Mapping}), que é uma ferramenta que traz várias funcionalidades para facilitar a inserção, atualização, busca e exclusão de registros.
+Em conjunto com o PHP será utilizado o Laravel, um \textit{framework} PHP voltado para o desenvolvimento web. O \textit{framework} utiliza a arquitetura \sigla{MVC}{Model-View-Controller} (\textit{Model-View-Controller}), que auxilia na separação de resposabilidades da aplicação, onde o \textit{Model} é a camada que realiza as interações com banco de dados e regras de negócio, a camada  \textit{View} é a parte que é visualizada pelo cliente, como por exemplo, em aplicações  \textit{web}, é o que será renderizado no navegador do usuário. Por final, a camada  \textit{Controller} é que realiza a ponte entre o  \textit{Model} e o  \textit{View}. 
+
+Para a criação da camada \textit{View}, o Laravel utiliza uma \textit{Engine} de \textit{template} chamada  \textit{Blade}, que traz uma gama de ferramentas que ajudam a criar interfaces de forma rápida e evitar a duplicação de código. Para se comunicar com um Banco de Dados o Laravel utiliza uma implementação da interface \textit{ActiveRecord} chamada de  \textit{Eloquent \sigla{ORM}{Object Relational Mapping}} (\textit{Object Relational Mapping}), que é uma ferramenta que traz várias funcionalidades para o gerenciamento do banco de dados. 
+
+O gerenciamento de rotas do Laravel é bem simples e direto. As rotas são uma definição do que será executado a partir de uma URL que foi acessada, como por exemplo, caso o usuário acesse a URL "/produtos/lista", o sistema deve mostrar a lista de produtos. O Laravel permite que uma rota seja associada a um \textit{Controller}, garantindo assim que o \textit{Controller} cuide do processamento do que foi requisitado pelo usuário.
+
+O Laravel trás tambem dois recursos significativos para a gestão do banco de dados da aplicação, que  são as migrações e os \textit{seeders}. As migrações são como um controle de versão do banco de dados, permitindo que seja possível o compartilhamento e modificação do esquema de banco de dados de forma rápida e prática, pois todo banco de dados é criado via programação, criando um arquivo para cada tabela ou alteração no banco de dados. A Figura \ref{migrate} contém um exemplo de uma migração para a criação da tabela de pessoa.
+
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=0.8\textwidth]{./Figuras/migrate.png} % <- formatos PNG, JPG e PDF
+	\caption[Exemplo de uma migração]{Exemplo do código-fonte de uma migração}
+	\fonte{Autoria própria}
+	\label{migrate}
+\end{figure}
+
+O outro recurso que foi citado acima, são as \textit{seeders}, que auxiliam na semeação de dados de teste na aplicação. Com ela é possível inserir dados aleatório nas tabelas de forma automatiza. 
+
+O Laravel fornece uma interface de linha de comando, chamada \textit{Artisan}. Com ela é possível gerar as classes  que serão necessárias para sua aplicação, como, um \textit{Controller}, uma Model, Seeders e outros. Também é possível simular a execução de uma classe do projeto e interagir com a mesma de forma dinâmica.
+
+O gerenciamento de dependências do Laravel é feito utilizando o \textit{Composer}, que é uma ferramenta para o gerenciamento de dependências de projetos em PHP. Ele permite que você declare as bibliotecas que seu projeto depende, e oferece uma interface via linha de comanda para que você possa atualizar, remover e instalar dependências de forma rápida. 
+
+O Laravel incentiva o uso de boas práticas de programação e utiliza as \sigla{PSR}{PHP Standards Recommendations} (\textit{PHP Standards Recommendations}) como guia para estilo de escrita do código, o seu intuito principal é ajudar a desenvolver aplicações com alto desempenho de forma rápida.
 
 \subsection{MySQL}
-Para armazenamento de dados será utilizado o SGBD MySQ. Atualmente o MySQL é um dos bancos de dados mais populares do mundo. Outro ponto importante para a escolha deste SGBD é sua fácil integração com o PHP, sendo a linguagem principal do projeto e a que irá interagir com o banco de dados.
+O MySQL é um gerenciador de banco de dados, que utiliza como padrão a linguagem SQL. Atualmente o mesmo é amplamente usado em aplicações para \textit{web}, empresas como Google, NASA, Netflix e Suzuki, utilizam MySQL em suas aplicações. Algumas das características que o torna uma boa opção de \sigla{SGBD}{Sistema de Gerenciamento de Banco de Dados} é sua velocidade, escalabilidade e confiabilidade. Além disso o MySQL tem a capacidade de manipular tabelas com mais de 50 milhões de registros, uma alta velocidade na execução de comandos e um fácil e eficiente controle de privilégios de usuários. Dessa forma o MySQL junto do PHP formam uma excelente escolha para o desenvolvimento de aplicações web robusta.
 
 \subsection{Redis}
-O Redis é uma ferramenta que auxilia o armazenamento de estrutura de dados no formato de chave-valor na memória. Como seus dados sempre ficarem na memoria o seu acesso é extremamente rápido, o que faz com que o Redis seja uma ferramenta ideal para trabalhar com \textit{cache}. Portanto para garantir a escalabilidade do sistema, evitando que o MySQL se torne um gargalo na aplicação, será utilizado o Redis como \textit{cache} do banco de dados.
+O Redis é uma ferramenta que auxilia o armazenamento de estrutura de dados no formato de chave-valor na memória. Como seus dados sempre ficarem na memoria o seu acesso é extremamente rápido, o que faz com que o Redis seja uma ferramenta ideal para trabalhar com \textit{cache}. Portanto para garantir a escalabilidade do sistema, evitando que o MySQL se torne um gargalo na aplicação, será utilizado o Redis como \textit{cache} do banco de dados, como será mostrado no capitulo da arquitetura do sistema.
 
-\subsection{Front-end}
-As tecnologias de \textit{Front-end} são as serão usados "do lado do cliente", ou seja as que são renderizada por um navegador web. Para o desenvolvimento da proposta será utilizado HTML5, CSS3, JavaScript, para que seja possível desenvolver um sistema que funcione em diversos dispositivos através de um navegador web.
+\subsection{Interface Web}
+Para o desenvolvimento da interface \textit{web} do projeto, será utilizado as seguintes tecnologias:
+\begin{itemize}
+	\item \sigla{HTML}{HyperText Markup Language}5 (\textit{HyperText Markup Language}): É uma Linguagem de marcação, usada para a criação dos elementos da página \textit{web};
+	\item \sigla{CSS}{Cascading Style Sheets}3 (\textit{Cascading Style Sheets}): É uma linguagem utilizada para personalizar os elementos criados com o HTML, como definir cores, formatos e outras formatações;
+	\item JavaScript: é uma linguagem de programação \textit{client-side}, utilizada para controlar o HTML e o CSS e manipular comportamentos na página;
+	\item jQuery: é uma biblioteca JavaScript que auxilia a manipulação de elementos HTML;
+	\item Vue.js: é uma biblioteca JavaScript que auxilia na criação de elementos em forma de componentes reativos.
+\end{itemize} 
 
 \subsection{Amazon Web Services}
 A computação em nuvem é a entrega sob demanda de poder computacional, armazenamento, banco de dados, aplicações e outros recursos. Como todos serviços são sob demanda, a definição de preço será conforme o uso. As principais vantagens do seu uso é:
@@ -26,24 +56,47 @@ A computação em nuvem é a entrega sob demanda de poder computacional, armazename
 	\item Usar configurações de infra-estrutura pré-definidas, evitando retrabalho;
 	\item Alta garantia de escalabilidade e disponibilidade.
 \end{itemize} 
-Para o desenvolvimento desta proposta será utilizado a nuvem da AWS (Amazon Web Services).
+Para o desenvolvimento desta proposta será utilizado a nuvem da \sigla{AWS}{Amazon Web Services} (\textit{Amazon Web Services}), como será mostrado no capitulo da arquitetura do sistema.
 
-\section{Arquitetura do Sistema}
-Neste capitulo será descrito o funcionamento dos principais componentes que formam a arquitetura do sistema. Toda arquitetura foi desenvolvida pensando em dois tópicos principais, redução de custos e escalabilidade. Para isso foi usado diversas tecnologias citadas na sessão anterior. 
+\section{Scrum Solo}
+O processo de desenvolvimento escolhido é o \textit{Scrum Solo}. De acordo com ... o \textit{Scrum Solo} é uma adaptação do \textit{Scrum} original, essa adaptação foi criada para que seja possível utilizar o \textit{Scrum} individualmente, que se divide nos seguintes artefatos:
 
-O modelo da arquitetura é o de cliente-servidor, no qual o cliente através da internet envia uma requisição para o servidor, o mesmo recebe, processa a solicitação e responde, como mostra a Figura \ref{clientservidor}.
+\begin{itemize}
+	\item 		\textit{Product Backlog}: Será o conjunto de itens que devem ser desenvolvidos para concluir esta proposta;
+	\item 		\textit{Sprint Backlog}: Lista de tarefas necessárias para a conclusão de partes do \textit{Product Backlog};
+	\item	 	\textit{Sprint}: Tempo necessário para a conclusão de um conjunto de itens do \textit{Sprint Backlog}, que nessa proposta deverá ser de 1 semana;
+\end{itemize} 
+
+Para adequar o scrum solo a esta proposta, não irá haver reuniões diárias, mas reuniões de orientação ao fim de cada \textit{Sprint}.
+
+\chapter{Arquitetura do Sistema}
+Neste capitulo será descrito o funcionamento dos principais componentes que formam a arquitetura do sistema. Toda arquitetura foi desenvolvida pensando em dois tópicos principais, redução de custos e escalabilidade. Para isso foi usado diversas tecnologias descritas na sessão de ferramentas e tecnologias. A Figura abaixo mostra uma visão geral da arquitetura.
 
 \begin{figure}[!htb]
 	\centering
-	\includegraphics[width=0.6\textwidth]{./Figuras/client-server.png} % <- formatos PNG, JPG e PDF
+	\includegraphics[width=0.9\textwidth]{./Figuras/arquitetura-visao-geral.png} % <- formatos PNG, JPG e PDF
+	\caption[Visão geral da arquitetura do sistema]{Visão geral da arquitetura do sistema}
+	\fonte{Autoria própria}
+	\label{visaogeralarq}
+\end{figure}
+
+
+O modelo da arquitetura é o de cliente-servidor, no qual o cliente através da internet envia uma requisição para o servidor, o mesmo recebe, processa a solicitação e responde, como mostra a Figura \ref{clientservidor}.
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=0.7\textwidth]{./Figuras/client-server.png} % <- formatos PNG, JPG e PDF
 	\caption[Arquitetura cliente-servidor]{Exemplo do funcionamento da arquitetura cliente-servidor}
 	\fonte{Autoria própria}
 	\label{clientservidor}
 \end{figure}
 
-Nesse modelo o servidor é a infra-estrutura que hospeda o sistema. Para que o sistema proposto funcione, será necessário que o servidor contenha instalado e configurado o Apache 2.4 e o PHP 7. Para garantir a escalabilidade foi incluído um balanceador de carga na frente do servidor, sua função é destinar as requisições para os servidores que estiverem com mais recursos disponíveis no momento. Caso todos os servidores estejam quase sem recursos, o balanceador de carga irá incluir um novo servidor, caso a média dos recursos de todas instancias ativas estiverem baixas, o balanceador irá remover servidores. Portanto o balanceador de carga irá gerenciar a escalabilidade da aplicação, aumentando ou diminuindo os recursos. A AWS fornece o serviço de balanceamento de carga, conhecido como ELB (\textit{Elastic Load Balancing}), no qual será utilizado para balancear a aplicação.
+Nesse modelo o servidor é a infra-estrutura que hospeda o sistema. Para que o sistema proposto funcione, será necessário que o servidor contenha instalado e configurado o Apache 2.4 e o PHP 7. 
 
-Já o para a criação do servidor iremos utilizar o serviço da AWS conhecido como EC2 (\textit{Elastic Compute Cloud}). Esse serviço disponibiliza de forma rápida um servidor com o sistema operacional escolhido, cada servidor criado com o EC2 é conhecido como instância. Um das vantagens da utilização do EC2 é sua fácil integração com o ELB. Além disso é possível configurar um EC2 e ao integra-lo com o ELB o mesmo irá replica-lo quando necessário uma instância idêntica a pré-definida inicialmente, como mostra a Figura \ref{elb}.
+Já o para a criação do servidor será utilizado o serviço da AWS conhecido como \sigla{EC2}{Elastic Compute Cloud} (\textit{Elastic Compute Cloud}). Esse serviço disponibiliza de forma rápida um servidor com o sistema operacional escolhido, cada servidor criado com o EC2 é conhecido como instância. Um das vantagens da utilização do EC2 é sua fácil integração com o balanceador de carga da AWS, chamado de \sigla{ELB}{Elastic Load Balancing} (\textit{Elastic Load Balancing}). 
+
+Para garantir a escalabilidade foi incluído um balanceador de carga na frente dos servidores. Sua função é destinar as requisições para os servidores que estiverem com mais recursos disponíveis no momento. Caso todos os servidores estejam quase sem recursos, o balanceador de carga irá incluir um novo servidor. Caso a média dos recursos de todas instancias ativas estiverem baixas, o balanceador irá remover servidores. Portanto o balanceador de carga irá gerenciar a escalabilidade da aplicação, aumentando ou diminuindo os recursos. Será utilizado o serviço de balanceamento de carga da AWS o ELB.
+
+ Além disso é possível configurar um EC2 e ao integra-lo com o ELB, para que ele replique quando necessário uma instância idêntica a pré-definida inicialmente, como mostra a Figura \ref{elb}.
 
 \begin{figure}[!htb]
 	\centering
@@ -52,3 +105,24 @@ Já o para a criação do servidor iremos utilizar o serviço da AWS conhecido como 
 	\fonte{Autoria própria}
 	\label{elb}
 \end{figure}
+
+\pagebreak
+
+Para armazenamento de dados será utilizado um SGBD, o escolhido para a aplicação será o MySQL. Para provisionar o MySQL vamos utilizar o serviço da AWS chamado \sigla{RDS}{Relational Database Service} (\textit{Relational Database Service}), com ele é possível fazer a criação e gerenciamento do banco de dados de forma simples e com alta confiabilidade. Pois o RDS fornece duas coisas muito importantes, o backup de forma automatizada e espalhamento geográfico do banco de dados, garantindo que os dados estejam sempre seguros e disponíveis.
+Porém a cobrança do uso do serviço RDS da AWS é feito a partir de vários fatores, alguns deles são:
+
+\begin{itemize}
+	\item Tipo de instancia que será utilizada no banco de dados (A AWS, fornece diversos tipos de instancias, com mais ou menos memoria, CPU ou rede), onde a AWS cobra por hora;
+	\item Quantidade de dados armazenados em \sigla{GB}{Gigabyte};
+	\item Quantidade de entradas e saídas feitas no banco de dados. 
+\end{itemize} 
+
+
+Para reduzir os custos com o banco de dados e aumentar sua velocidade de resposta, cada consulta enviada ao MySQL, deverá ter seu resultado salvo como \textit{cache} no Redis, para que as próximas consultas não sejam enviadas para o MySQL, mas venha direto do Redis, como mostra a figura \ref{visaogeralarq}. Outra vantagem com a utilização do Redis, é a possibilidade utilizar uma instancia de banco de dados que não tenha muitos recursos, já que as consultas estarão em \textit{cache}, gerando assim poucas saídas do banco de dados e com isso não consumindo muitos recursos do MySQL.
+
+As imagens geradas pelos usuários devem ser salvas. Porém se as imagens forem salvas dentro do EC2, quando o ELB remover um EC2 as imagens que estarão neste servidor serão perdidas. Para solucionar esse problema utilizaremos o serviço de \textit{Storage} da AWS, chamado \sigla{S3}{Simple Storage Service} (\textit{Simple Storage Service}), com ele é possível salvar arquivos de diversos tamanhos e formatos na nuvem, e acessa-los via URL, API ou através da linha de comando. O S3 fornece diversos recursos. Um importante para a aplicação é a possibilidade de definir uma data de exclusão para um conjunto de arquivos. Será definido que os arquivos de imagens criados pelos usuários devem ser apagados após 30 dias da sua criação. Fazendo com que o custo de armazenamento de imagens seja reduzido.
+
+A cobrança do S3 é feita por diversos fatores como, quantidade de GB armazenados, quantidade de dados transferidos. Para reduzir o custo de transferência de dados será utilizado um \sigla{CDN}{Content Delivery Network} (\textit{Content Delivery Network}). O CDN "é uma rede de servidores que armazenam réplicas de arquivos ou conteúdos em memória (\textit{cache}) e depois os entrega aos visitantes, baseando-se na localização geográfica para conectá-los ao servidor mais próximo e mais rápido, reduzindo o tempo de transferência dos dados (latência). O CDN também se comunicará com o servidor de origem para entregar qualquer conteúdo ou arquivo que não tenha sido previamente armazenado em \textit{cache}. Além disso seu uso permite que o site suporte melhor ataques DDoS e mantenha alta disponibilidade, por estar presente simultaneamente em diferentes \textit{datacenters}". Com isso a transferência de dados com o S3 será feita apenas uma vez por arquivo, reduzindo o custo de transferência de dados. Para essa proposta será utilizado o CDN da empresa Cloudflare\footnote{www.cloudflare.com}, pois eles oferecem esse serviço de forma gratuita.
+
+\chapter{Proposta}
+Este capítulo apresenta a proposta de desenvolvimento de um sistema \textit{web}, capaz de auxiliar na criação e divulgação de conteúdos que permite a interação com o usuário que o acessa, resultando em uma imagem personalizada, a partir dos dados do Facebook do usuário. Para facilitar a compreensão utilizaremos o nome de \textbf{aplicativo} para definir este tipo de conteúdo.
