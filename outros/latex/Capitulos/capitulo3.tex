@@ -1,29 +1,249 @@
 % CAPÍTULO 3
 
-\chapter{Metodologia}
+
+\chapter{Proposta}
+Este capítulo apresenta a proposta de desenvolvimento de um sistema \textit{web}, capaz de auxiliar na criação e divulgação de conteúdos que permitem a interação com o usuário que o acessa, resultando em uma imagem personalizada, a partir dos dados do Facebook do usuário. Para facilitar a compreensão utilizaremos o nome de \textbf{aplicativo} para definir este tipo de conteúdo.
+
+
+\section{Sistema Web}
+O sistema proposto é divididos em duas partes, que são o site e gerenciador de conteúdo.
+\subsection{GERENCIADOR DE CONTEÚDO}
+
+O gerenciador de conteúdo será a área onde os criadores de conteúdo iram inserir os aplicativos. O diagrama de caso de uso geral abaixo, mostra as funcionalidades que devem conter no gerenciador de conteúdo.
+
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=1\textwidth]{./Figuras/caso-de-uso-gerenciador.png} % <- formatos PNG, JPG e PDF
+	\caption[Caso de uso geral do gerenciador de conteúdo]{Caso de uso geral do gerenciador de conteúdo.}
+	\fonte{Autoria própria}
+	\label{fig:caso-de-uso-gerenciador}
+\end{figure}
+\pagebreak
+Para isso os sistema deve conter os seguintes requisitos funcionais:
+\begin{itemize}
+	\item \textbf{RF1} O sistema deve permitir níveis de acesso, conforme o papel especificado. Cada usuário terá a opção de ter um papel entre dois, que serão dois: administradores ou criadores de conteúdo.
+	\item \textbf{RF2}  Os administradores iram realizar todas as atividades que um criador de conteúdo possa realizar;
+	\item \textbf{RF3}  O sistema deve permitir que criadores de conteúdos insiram aplicativos;
+	\item \textbf{RF4}  O sistema deve permitir que os administradores possam gerenciar todos os usuários;
+	\item \textbf{RF5}  O sistema deve permitir que os criadores de conteúdo consigam gerar um link para a divulgação.
+\end{itemize}
+
+As Tabelas abaixo mostram quais campos devem conter no gerenciador de conteúdo para auxiliar na criação de uma aplicativo.
+
+\begin{table}[!htb]
+\centering
+\includegraphics[width=1\textwidth]{./Figuras/tabela1.png} % <- formatos PNG, JPG e PDF
+\caption{Atributos do aplicativo}
+\label{tabela1}
+\end{table}
+
+A tabela \ref{tabela1} mostra os campos básicos para a inserção de um aplicativo, a tabela \ref{tabela2} irá mostrar quais componentes poderão ser inseridos no aplicativos.
+
+\begin{table}[!htb]
+	\centering
+	\includegraphics[width=1\textwidth]{./Figuras/tabela2.png} % <- formatos PNG, JPG e PDF
+	\caption{Componentes que podem ser inseridos em um aplicativo}
+	\label{tabela2}
+\end{table}
+\pagebreak
+
+Para mostrar em detalhes os atributos de cada componentes foi criado foi criado uma tabela para cada componente, como mostra as figuras abaixo.
+
+\begin{table}[!htb]
+	\centering
+	\includegraphics[width=0.4\textwidth]{./Figuras/fundos.png} % <- formatos PNG, JPG e PDF
+	\caption{Componente de Fundos.}
+	\label{tabela3}
+\end{table}
+
+O componente de fundo permite a inserção de diversos fundos, sendo necessário pelo menos um fundo por aplicativo, a tabela \ref{tabela3} mostra os campos necessários para a inserção de um fundo. Os fundos devem variar de forma randômica como será mostrado posteriormente.
+
+
+\begin{table}[!htb]
+	\centering
+	\includegraphics[width=0.4\textwidth]{./Figuras/tabela-fotos.png} % <- formatos PNG, JPG e PDF
+	\caption{Componente de Fotos.}
+	\label{tabela4}
+\end{table}
+
+O componente de fotos permite a inserção de diversas fotos do usuário, a tabela \ref{tabela4} mostra os campos necessários para a inserção de uma foto. Todas as fotos inseridas devem ser inclusas no aplicativo, como será mostrado posteriormente.
+
+\begin{table}[!htb]
+	\centering
+	\includegraphics[width=0.5\textwidth]{./Figuras/tabela-grupo-de-textos.png} % <- formatos PNG, JPG e PDF
+	\caption{Componente Grupo de Textos.}
+	\label{tabela5}
+\end{table}
+
+\begin{table}[!htb]
+	\centering
+	\includegraphics[width=0.4\textwidth]{./Figuras/tabela-textos.png} % <- formatos PNG, JPG e PDF
+	\caption{Parte do componente Grupo de Textos.}
+	\label{tabela6}
+\end{table}
+
+O Grupo de Textos permite a inserção de diversos grupos de texto em um aplicativo, cada grupo de texto podem conter diversos textos, sendo necessário ao menos um texto por grupo. A tabela \ref{tabela5} e \ref{tabela6} mostra os campos necessários para a inserção de uma Grupo de Texto. Todas os Grupos de Textos inseridos devem ser inclusos no aplicativo, como será mostrado posteriormente.
+
+\begin{table}[!htb]
+	\centering
+	\includegraphics[width=0.4\textwidth]{./Figuras/tabela-fotos.png} % <- formatos PNG, JPG e PDF
+	\caption{Componente de Fotos.}
+	\label{tabela6}
+\end{table}
+\pagebreak
+
+Os componentes Fundos e os Textos do Grupo de Textos tem a opção de incluir um filtro por item inserido, a tabela \ref{tabela7} mostra os atributos que podem ser inseridos em um filtro.
+\begin{table}[!htb]
+	\centering
+	\includegraphics[width=0.4\textwidth]{./Figuras/tabela-filtro.png} % <- formatos PNG, JPG e PDF
+	\caption{Parte do componente fundos e dos textos do grupo de textos.}
+	\label{tabela7}
+\end{table}
+
+\subsubsection{INSERÇÃO DE CONTEÚDO}
+Nessa subseção será mostrado os protótipos de tela do gerenciador de conteúdo, na área de inserção de conteúdo. O protótipo será apresentado simulando a inserção de um aplicativo idêntico ao mostrado na Figura \ref{resultado2}.
+
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=0.8\textwidth]{./Figuras/resultado.jpg} % <- formatos PNG, JPG e PDF
+	\caption[Exemplo de um resultado de um aplicativo]{Exemplo de um resultado de um aplicativo}
+	\fonte{Autoria própria}
+	\label{resultado2}
+\end{figure}
+\pagebreak
+
+A Figura \ref{tela1}, mostra o protótipo de tela para a inserção dos dados básicos do aplicativo, que são o titulo, texto, imagem de listagem e imagem de chamada. No exemplo abaixo foi simulado a inserção do aplicativo chamado "6 características suas que são marcantes!", esse aplicativo será utilizado em toda essa subseção para exemplificar a inserção de conteúdo.
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=0.8\textwidth]{./Figuras/prototipo/tela1.png} % <- formatos PNG, JPG e PDF
+	\caption[Protótipo de tela da inserção dos dados básicos]{Protótipo de tela da inserção dos dados básicos do aplicativo.}
+	\fonte{Autoria própria}
+	\label{tela1}
+\end{figure}
+
+A Figura \ref{tela2}, mostra o protótipo de tela para a inserção dos fundos do aplicativo. No exemplo mostrado foi inserido duas imagens e seus filtros são: A imagem em tons de verdade será para o sexo masculino, já a em tons de vermelho será para o sexo feminino.
+
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=1\textwidth]{./Figuras/prototipo/tela2.png} % <- formatos PNG, JPG e PDF
+	\caption[Protótipo de tela da inserção dos fundos do aplicativo]{Protótipo de tela da inserção dos fundos do aplicativo.}
+	\fonte{Autoria própria}
+	\label{tela2}
+\end{figure}
+
+
+A Figura \ref{tela3}, mostra o protótipo de tela para a inserção dos fundos do aplicativo. No exemplo mostrado foi inserido duas imagens e seus filtros são: A imagem em tons de verdade será para o sexo masculino, já a em tons de vermelho será para o sexo feminino. Ao selecionar o campo "Imagem de Fundo", como mostrado na Figura \ref{tela3}, a foto do usuário irá ficar em baixo dos fundos, resultando em uma imagem arredondada, como foi mostrado na Figura \ref{resultado2}.
+
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=1\textwidth]{./Figuras/prototipo/tela3-1.png} % <- formatos PNG, JPG e PDF
+	\includegraphics[width=1\textwidth]{./Figuras/prototipo/tela3-2.png} % <- formatos PNG, JPG e PDF
+	\caption[Protótipo de tela da inserção das fotos do usuário]{Protótipo de tela da inserção das fotos do usuário no aplicativo.}
+	\fonte{Autoria própria}
+	\label{tela3}
+\end{figure}
+\pagebreak
+
+A Figura \ref{tela4} e \ref{tela41}, mostra o protótipo de tela para a inserção dos fundos do aplicativo. No exemplo mostrado foi inserido duas imagens e seus filtros são: A imagem em tons de verdade será para o sexo masculino, já a em tons de vermelho será para o sexo feminino.
+
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=0.65\textwidth]{./Figuras/prototipo/tela4-1.png} % <- formatos PNG, JPG e PDF
+	\caption[Protótipo de tela da lista de Grupos de Textos inseridos]{Protótipo de tela da lista de Grupos de Textos inseridos.}
+	\fonte{Autoria própria}
+	\label{tela4}
+\end{figure}
+
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=1\textwidth]{./Figuras/prototipo/tela4-2.png} % <- formatos PNG, JPG e PDF
+	\includegraphics[width=1\textwidth]{./Figuras/prototipo/tela4-3.png} % <- formatos PNG, JPG e PDF
+	\includegraphics[width=1\textwidth]{./Figuras/prototipo/tela4-4.png} % <- formatos PNG, JPG e PDF
+	\caption[Protótipo de tela da inserção dos Grupos de Textos]{Protótipo de tela da inserção dos Grupos de Textos.}
+	\fonte{Autoria própria}
+	\label{tela41}
+\end{figure}
+
+A Figura \ref{tela41}, mostra os campos de um grupo de textos preenchidos. Para o exemplo será usado 7 grupos de textos, como mostrado na Figura \ref{tela4}, sendo um grupo para cada balão das imagens de fundo, e um para inserir o nome do usuário. Como mostrado na figura é possível inserir diversos textos em um grupo de texto, porém será selecionado apenas um texto por grupo ao gerar o resultado.
+
+\pagebreak
+
+\subsection{SITE}
+O site é o sistema web que irá interagir com o usuário. Para que essa interação aconteça ele irá ver a publicação do link em sua rede social, ao acessar ele irá poder interagir com o sistema. O diagrama de caso de uso geral abaixo mostra uma visão ampla do funcionamento do site.
+
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=1\textwidth]{./Figuras/caso-de-uso-site.png} % <- formatos PNG, JPG e PDF
+	\caption[Caso de uso geral do site]{Caso de uso geral do site.}
+	\fonte{Autoria própria}
+	\label{casodeusogeralsite}
+\end{figure}
+
+Para isso o sistema deve conter os seguintes requisitos funcionais:
+\begin{itemize}
+	\item \textbf{RF6} O sistema deve permitir que os usuários realize a autenticação a partir do Facebook Login;
+	\item \textbf{RF7}  O sistema deve permitir que o usuário interaja com o aplicativo resultando em um imagem;
+	\item \textbf{RF8}  O sistema deve permitir que o usuário compartilhe o seu resultado.
+\end{itemize}
+
+\subsubsection{CONSTRUÇÃO DA IMAGEM}
+A construção da imagem é a fase onde o sistema irá integrar os dados do usuário com a
+personalização definida na inserção do aplicativo, na subseção 3.1.1.1. A Figura  \ref{site1} mostra o protótipo da tela de visualização do aplicativo, nele e possível identificar os atributos de visualização (titulo, texto e imagem de chamada) e um espaço para a inclusão de anúncios. O botão "Ver resultado"{} será usado para iniciar o processamento da imagem, iniciando com a autenticação com o \textit{Facebook Login} para ter acesso aos dados como nome, data de aniversário e fotos, para o sistema realizar a construção da imagem.
+
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=1\textwidth]{./Figuras/prototipo/site1.png} % <- formatos PNG, JPG e PDF
+	\caption[Protótipo de tela da visualização do aplicativo]{Protótipo de tela da visualização do aplicativo.}
+	\fonte{Autoria própria}
+	\label{site1}
+\end{figure}
+
+Depois de construir a imagem o sistema irá redirecionar o usuário para visualizar a
+mesma. Nessa tela irá conter a imagem gerada, um botão para gerar novamente e outro para
+que o usuário possa compartilhar em seu Facebook, como mostra na Figura \ref{site2}.
+
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=1\textwidth]{./Figuras/prototipo/site2.png} % <- formatos PNG, JPG e PDF
+	\caption[Protótipo de tela da visualização do resultado gerado]{Protótipo de tela da visualização do resultado gerado.}
+	\fonte{Autoria própria}
+	\label{site2}
+\end{figure}
+
+\pagebreak
 
 
 \section{Tecnologias e Ferramentas}
+A seguir, destacam-se as principais ferramentas e tecnologias a serem utilizadas neste trabalho.
 
 \subsection{PHP}
 O sistema \textit{web} será desenvolvido utilizando a linguagem PHP, por ser uma linguagem rica em recursos e amplamente consolidada no desenvolvimento \textit{web}. O PHP 7 é a nova versão da linguagem e que será utilizada para desenvolver essa proposta, trouxe um salto de \textit{performance} entre 10 a 25\% em comparação com sua versão anterior. Também trouxe melhorias como uso otimizado de memória, classes anonimas, possibilidade do tratamento de erros fatais, entre outros. Com esse avanço a linguagem aumentou sua confiabilidade para o desenvolvimento de softwares de grande porte \cite{Otemuyiwa2015, Saggio2016}.
 
-\subsection{Laravel}
+\subsection{LARAVEL}
 Em conjunto com o PHP será utilizado o Laravel, um \textit{framework} PHP voltado para o desenvolvimento web. O \textit{framework} utiliza a arquitetura \sigla{MVC}{Model-View-Controller} (\textit{Model-View-Controller}), que auxilia na separação de resposabilidades da aplicação, onde o \textit{Model} é a camada que realiza as interações com banco de dados e regras de negócio, a camada  \textit{View} é a parte que é visualizada pelo cliente, como por exemplo, em aplicações  \textit{web}, é o que será renderizado no navegador do usuário. Por final, a camada  \textit{Controller} é que realiza a ponte entre o  \textit{Model} e o  \textit{View}. 
 
 Para a criação da camada \textit{View}, o Laravel utiliza uma \textit{Engine} de \textit{template} chamada  \textit{Blade}, que traz uma gama de ferramentas que ajudam a criar interfaces de forma rápida e evitar a duplicação de código. Para se comunicar com um Banco de Dados o Laravel utiliza uma implementação da interface \textit{ActiveRecord} chamada de  \textit{Eloquent \sigla{ORM}{Object Relational Mapping}} (\textit{Object Relational Mapping}), que é uma ferramenta que traz várias funcionalidades para o gerenciamento do banco de dados. 
 
 O gerenciamento de rotas do Laravel é bem simples e direto. As rotas são uma definição do que será executado a partir de uma URL que foi acessada, como por exemplo, caso o usuário acesse a URL "/produtos/lista", o sistema deve mostrar a lista de produtos. O Laravel permite que uma rota seja associada a um \textit{Controller}, garantindo assim que o \textit{Controller} cuide do processamento do que foi requisitado pelo usuário.
 
-O Laravel trás tambem dois recursos significativos para a gestão do banco de dados da aplicação, que  são as migrações e os \textit{seeders}. As migrações são como um controle de versão do banco de dados, permitindo que seja possível o compartilhamento e modificação do esquema de banco de dados de forma rápida e prática, pois todo banco de dados é criado via programação, criando um arquivo para cada tabela ou alteração no banco de dados. A Figura \ref{migrate} contém um exemplo de uma migração para a criação da tabela de pessoa.
+O Laravel trás tambem dois recursos significativos para a gestão do banco de dados da aplicação, que  são as migrações e os \textit{seeders}. As migrações são como um controle de versão do banco de dados, permitindo que seja possível o compartilhamento e modificação do esquema de banco de dados de forma rápida e prática, pois todo banco de dados é criado via programação, criando um arquivo para cada tabela ou alteração no banco de dados. O código abaixo contém um exemplo de uma migração para a criação da tabela de pessoa.
 
-\begin{figure}[!htb]
-	\centering
-	\includegraphics[width=0.8\textwidth]{./Figuras/migrate.png} % <- formatos PNG, JPG e PDF
-	\caption[Exemplo de uma migração]{Exemplo do código-fonte de uma migração}
-	\fonte{Autoria própria}
-	\label{migrate}
-\end{figure}
+\begin{lstlisting}[language=PHP, caption=Python example]
+<?php
+class CriarTabelaDePessoa extends Migration{
+public function up(){
+Schema::create('pessoa', function (Blueprint $table) {
+$table->increments('id');
+$table->string('nome');
+$table->string('email');
+});
+}
+public function down(){
+Schema::drop('pessoa');
+}
+}
+?>
+\end{lstlisting}
 
 O outro recurso que foi citado acima, são as \textit{seeders}, que auxiliam na semeação de dados de teste na aplicação. Com ela é possível inserir dados aleatório nas tabelas de forma automatiza. 
 
@@ -33,13 +253,13 @@ O gerenciamento de dependências do Laravel é feito utilizando o \textit{Composer
 
 O Laravel incentiva o uso de boas práticas de programação e utiliza as \sigla{PSR}{PHP Standards Recommendations} (\textit{PHP Standards Recommendations}) como guia para estilo de escrita do código, o seu intuito principal é ajudar a desenvolver aplicações com alto desempenho de forma rápida.
 
-\subsection{MySQL}
+\subsection{MYSQL}
 O MySQL é um gerenciador de banco de dados, que utiliza como padrão a linguagem SQL. Atualmente o mesmo é amplamente usado em aplicações para \textit{web}, empresas como Google, NASA, Netflix e Suzuki, utilizam MySQL em suas aplicações. Algumas das características que o torna uma boa opção de \sigla{SGBD}{Sistema de Gerenciamento de Banco de Dados} é sua velocidade, escalabilidade e confiabilidade. Além disso o MySQL tem a capacidade de manipular tabelas com mais de 50 milhões de registros, uma alta velocidade na execução de comandos e um fácil e eficiente controle de privilégios de usuários. Dessa forma o MySQL junto do PHP formam uma excelente escolha para o desenvolvimento de aplicações web robusta.
 
-\subsection{Redis}
+\subsection{REDIS}
 O Redis é uma ferramenta que auxilia o armazenamento de estrutura de dados no formato de chave-valor na memória. Como seus dados sempre ficarem na memoria o seu acesso é extremamente rápido, o que faz com que o Redis seja uma ferramenta ideal para trabalhar com \textit{cache}. Portanto para garantir a escalabilidade do sistema, evitando que o MySQL se torne um gargalo na aplicação, será utilizado o Redis como \textit{cache} do banco de dados, como será mostrado no capitulo da arquitetura do sistema.
 
-\subsection{Interface Web}
+\subsection{INTERFACE WEB}
 Para o desenvolvimento da interface \textit{web} do projeto, será utilizado as seguintes tecnologias:
 \begin{itemize}
 	\item \sigla{HTML}{HyperText Markup Language}5 (\textit{HyperText Markup Language}): É uma Linguagem de marcação, usada para a criação dos elementos da página \textit{web};
@@ -49,7 +269,7 @@ Para o desenvolvimento da interface \textit{web} do projeto, será utilizado as s
 	\item Vue.js: é uma biblioteca JavaScript que auxilia na criação de elementos em forma de componentes reativos.
 \end{itemize} 
 
-\subsection{Amazon Web Services}
+\subsection{AMAZON WEB SERVICES}
 A computação em nuvem é a entrega sob demanda de poder computacional, armazenamento, banco de dados, aplicações e outros recursos. Como todos serviços são sob demanda, a definição de preço será conforme o uso. As principais vantagens do seu uso é:
 \begin{itemize}
 	\item Os custos e capacidade variam conforme o uso, com isso é possível aumentar ou diminuir sempre que houver demanda;
@@ -58,8 +278,8 @@ A computação em nuvem é a entrega sob demanda de poder computacional, armazename
 \end{itemize} 
 Para o desenvolvimento desta proposta será utilizado a nuvem da \sigla{AWS}{Amazon Web Services} (\textit{Amazon Web Services}), como será mostrado no capitulo da arquitetura do sistema.
 
-\section{Scrum Solo}
-O processo de desenvolvimento escolhido é o \textit{Scrum Solo}. De acordo com ... o \textit{Scrum Solo} é uma adaptação do \textit{Scrum} original, essa adaptação foi criada para que seja possível utilizar o \textit{Scrum} individualmente, que se divide nos seguintes artefatos:
+\section{SCRUM SOLO}
+O processo de desenvolvimento escolhido para o desenvolvimento dessa proposta será o \textit{Scrum Solo}. O \textit{Scrum Solo} é uma adaptação do \textit{Scrum} original, essa adaptação foi criada para que seja possível utilizar o \textit{Scrum} individualmente, que se divide nos seguintes artefatos \cite{Pagotto}:
 
 \begin{itemize}
 	\item 		\textit{Product Backlog}: Será o conjunto de itens que devem ser desenvolvidos para concluir esta proposta;
@@ -69,7 +289,7 @@ O processo de desenvolvimento escolhido é o \textit{Scrum Solo}. De acordo com .
 
 Para adequar o scrum solo a esta proposta, não irá haver reuniões diárias, mas reuniões de orientação ao fim de cada \textit{Sprint}.
 
-\chapter{Arquitetura do Sistema}
+\section{Arquitetura do Sistema}
 Neste capitulo será descrito o funcionamento dos principais componentes que formam a arquitetura do sistema. Toda arquitetura foi desenvolvida pensando em dois tópicos principais, redução de custos e escalabilidade. Para isso foi usado diversas tecnologias descritas na sessão de ferramentas e tecnologias. A Figura abaixo mostra uma visão geral da arquitetura.
 
 \begin{figure}[!htb]
@@ -96,7 +316,7 @@ Já o para a criação do servidor será utilizado o serviço da AWS conhecido como \
 
 Para garantir a escalabilidade foi incluído um balanceador de carga na frente dos servidores. Sua função é destinar as requisições para os servidores que estiverem com mais recursos disponíveis no momento. Caso todos os servidores estejam quase sem recursos, o balanceador de carga irá incluir um novo servidor. Caso a média dos recursos de todas instancias ativas estiverem baixas, o balanceador irá remover servidores. Portanto o balanceador de carga irá gerenciar a escalabilidade da aplicação, aumentando ou diminuindo os recursos. Será utilizado o serviço de balanceamento de carga da AWS o ELB.
 
- Além disso é possível configurar um EC2 e ao integra-lo com o ELB, para que ele replique quando necessário uma instância idêntica a pré-definida inicialmente, como mostra a Figura \ref{elb}.
+Além disso é possível configurar um EC2 e ao integra-lo com o ELB, para que ele replique quando necessário uma instância idêntica a pré-definida inicialmente, como mostra a Figura \ref{elb}.
 
 \begin{figure}[!htb]
 	\centering
@@ -123,6 +343,3 @@ Para reduzir os custos com o banco de dados e aumentar sua velocidade de respost
 As imagens geradas pelos usuários devem ser salvas. Porém se as imagens forem salvas dentro do EC2, quando o ELB remover um EC2 as imagens que estarão neste servidor serão perdidas. Para solucionar esse problema utilizaremos o serviço de \textit{Storage} da AWS, chamado \sigla{S3}{Simple Storage Service} (\textit{Simple Storage Service}), com ele é possível salvar arquivos de diversos tamanhos e formatos na nuvem, e acessa-los via URL, API ou através da linha de comando. O S3 fornece diversos recursos. Um importante para a aplicação é a possibilidade de definir uma data de exclusão para um conjunto de arquivos. Será definido que os arquivos de imagens criados pelos usuários devem ser apagados após 30 dias da sua criação. Fazendo com que o custo de armazenamento de imagens seja reduzido.
 
 A cobrança do S3 é feita por diversos fatores como, quantidade de GB armazenados, quantidade de dados transferidos. Para reduzir o custo de transferência de dados será utilizado um \sigla{CDN}{Content Delivery Network} (\textit{Content Delivery Network}). O CDN "é uma rede de servidores que armazenam réplicas de arquivos ou conteúdos em memória (\textit{cache}) e depois os entrega aos visitantes, baseando-se na localização geográfica para conectá-los ao servidor mais próximo e mais rápido, reduzindo o tempo de transferência dos dados (latência). O CDN também se comunicará com o servidor de origem para entregar qualquer conteúdo ou arquivo que não tenha sido previamente armazenado em \textit{cache}. Além disso seu uso permite que o site suporte melhor ataques DDoS e mantenha alta disponibilidade, por estar presente simultaneamente em diferentes \textit{datacenters}". Com isso a transferência de dados com o S3 será feita apenas uma vez por arquivo, reduzindo o custo de transferência de dados. Para essa proposta será utilizado o CDN da empresa Cloudflare\footnote{www.cloudflare.com}, pois eles oferecem esse serviço de forma gratuita.
-
-\chapter{Proposta}
-Este capítulo apresenta a proposta de desenvolvimento de um sistema \textit{web}, capaz de auxiliar na criação e divulgação de conteúdos que permite a interação com o usuário que o acessa, resultando em uma imagem personalizada, a partir dos dados do Facebook do usuário. Para facilitar a compreensão utilizaremos o nome de \textbf{aplicativo} para definir este tipo de conteúdo.

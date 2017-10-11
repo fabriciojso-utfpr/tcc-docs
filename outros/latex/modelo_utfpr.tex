@@ -10,6 +10,7 @@
 %% Profa. Dra. Erica Ferreira de Souza (UTFPR-CP, 03/2016)
 
 \documentclass[10pt,a4paper]{normas-utf-tex} %openright = o capitulo comeca sempre em paginas impares
+
 %\documentclass[oneside]{normas-utf-tex} %oneside = para dissertacoes com numero de paginas menor que 100 (apenas frente da folha)
 
 
@@ -22,6 +23,25 @@
 \usepackage{amsmath,amsfonts,amssymb} % pacote matematico
 \usepackage{graphicx} % pacote grafico
 \usepackage{times} % fonte times
+\usepackage{listings,xcolor}
+\usepackage{inconsolata}
+\usepackage{tabularx}
+\usepackage{graphicx}
+\definecolor{dkgreen}{rgb}{0,.6,0}
+\definecolor{dkblue}{rgb}{0,0,.6}
+\definecolor{dkyellow}{cmyk}{0,0,.8,.3}
+
+\lstset{
+	language        = php,
+	basicstyle      = \small\ttfamily,
+	keywordstyle    = \color{dkblue},
+	stringstyle     = \color{red},
+	identifierstyle = \color{dkgreen},
+	commentstyle    = \color{gray},
+	emph            =[1]{php},
+	emphstyle       =[1]\color{black},
+	emph            =[2]{if,and,or,else},
+	emphstyle       =[2]\color{dkyellow}}
 
 
 %Podem utilizar GEOMETRY{...} para realizar pequenos ajustes das margens. Onde, left=esquerda, right=direita, top=superior, bottom=inferior. P.ex.:
@@ -31,7 +51,6 @@
 \instituicao{Universidade Tecnológica Federal do Paraná} % nome da instituicao
 \unidade{Câmpus Cornélio Procópio}
 \programa{Engenharia De Software} % nome do curso
-\area{...} % [Engenharia Biom\'edica] ou [Inform\'atica Industrial] ou [Telem\'atica]
 \coordenacao{Programa de Graduação em Engenharia de Software} %[Ex: Programa de Graduação em Engenharia de Computação] ou [Programa de Graduação em Engenharia de Software]
 \diretoria{Diretoria de Graduação e Educação Profissional}
 \departamento{Departamento de Computação}
@@ -40,18 +59,18 @@
 \nivel{Graduação} % [Graduação] ou [Mestrado] ou [Doutorado]
 \titulacao{Bacharel} % [Tecnólogo] ou [Bacharel] ou [Engenheiro] ou [Mestre] ou [Doutor]
 
-\titulo{Sistema para criação, divulgação e monetização de conteúdos virais} % titulo do trabalho em portugues
-\title{Title in English} % titulo do trabalho em ingles
+\titulo{Um modelo para a criação, divulgação e monetização de conteúdos dinâmicos com ênfase em viralizações} % titulo do trabalho em portugues
+\title{A model for the creation, disclosure and monetization of dynamic content with an emphasis on viralization} % titulo do trabalho em ingles
 
 \autor{Fabricio Jhonata Sousa de Oliveira} % autor do trabalho
 \cita{OLIVEIRA, Fabricio} % sobrenome (maiusculas), nome do autor do trabalho
 
-\palavraschave{saas, plataforma, monetização, facebook} % palavras-chave do trabalho
-\keywords{saas, facebook} % palavras-chave do trabalho em ingles
+\palavraschave{monetização, modelo, conteúdo dinâmico, facebook api, graph api, laravel, php, viral} % palavras-chave do trabalho
+\keywords{monetization, model, dynamic content, facebook api, graph api, laravel, php, viral} % palavras-chave do trabalho em ingles
 
 \comentario{Trabalho de conclusão de curso de graduação apresentado à disciplina Trabalho de Conclusão de Curso 1, do Curso Superior de Engenharia de Software da Universidade Tecnológica Federal do Paraná, Câmpus Cornélio Procópio como avaliação para obtenção do título de Bacharel em Engenharia de Software.}
 
-\orientador{Prof. Me. Diogo Cezar T. Batista} % nome do orientador do trabalho
+\orientador{Prof. Me. Diogo Cezar Teixeira Batista} % nome do orientador do trabalho
 %\orientador[Orientadora:]{Nome da Orientadora} % <- no caso de orientadora, usar esta sintaxe
 %\coorientador{Nome do Co-orientador} % nome do co-orientador do trabalho, caso exista
 %\coorientador[Co-orientadora:]{Nome da Co-orientadora} % <- no caso de co-orientadora, usar esta sintaxe
@@ -62,10 +81,10 @@
 % % %  OBRIGATÓRIO PREENCHIMENTO % % % %
 \local{Cornélio Procópio} % cidade
 \data{\the\year} % ano automatico
-\localdia{Cornélio Procópio,  XX/XX/2017}
+\localdia{Cornélio Procópio,  11/10/2017}
 
 %(OBRIGATÓRIO)
-\textoaprovacao{Este \UTFPRdocumentodata\ foi julgado adequado para obten\c c\~ao do T\'itulo de ``\UTFPRtitulacaodata\ em \UTFPRareadata'' e aprovado em sua forma final pelo \UTFPRcoordenacaodata\ da \ABNTinstituicaodata.}
+\textoaprovacao{Este \UTFPRdocumentodata\ foi julgado adequado para obten\c c\~ao do T\'itulo de \UTFPRtitulacaodata\ em \UTFPRareadata'' e aprovado em sua forma final pelo \UTFPRcoordenacaodata\ da \ABNTinstituicaodata.}
 \primeiroassina{Prof. Titulação, Nome Professor Orientador\\ \ABNTinstituicaodata \\}
 \segundoassina{Prof. Titulação, Nome professor membro da banca \\ \ABNTinstituicaodata \\}
 \terceiroassina{Prof. Titulação, Nome professor membro da banca \\ \ABNTinstituicaodata \\}
@@ -73,8 +92,8 @@
 %---------- Inicio do Documento ----------
 \begin{document}
 	
-	%\capa % geracao automatica da capa (OBRIGATÓRIO)
-	%\folhaderosto % geracao automatica da folha de rosto (OBRIGATÓRIO)
+	\capa % geracao automatica da capa (OBRIGATÓRIO)
+	\folhaderosto % geracao automatica da folha de rosto (OBRIGATÓRIO)
 	%\termodeaprovacao  % (OBRIGATÓRIO)
 	
 	% dedicatória (opcional)
@@ -93,14 +112,14 @@
 	%\end{epigrafe}
 	
 	%resumo (OBRIGATÓRIO)
-	%\begin{resumo}
+	\begin{resumo}
 	%Texto do resumo (m\'aximo de 500 palavras).
-	%\end{resumo}
+	\end{resumo}
 	
 	%abstract (OBRIGATÓRIO)
-	%\begin{abstract}
+	\begin{abstract}
 	%Abstract ... (maximum of 500 words).
-	%\end{abstract}
+	\end{abstract}
 	
 	% listas (opcionais, mas recomenda-se a partir de 5 elementos)
 	\listadefiguras % geracao automatica da lista de figuras
