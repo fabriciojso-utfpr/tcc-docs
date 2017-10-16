@@ -23,25 +23,32 @@
 \usepackage{amsmath,amsfonts,amssymb} % pacote matematico
 \usepackage{graphicx} % pacote grafico
 \usepackage{times} % fonte times
-\usepackage{listings,xcolor}
+\usepackage{listings}
+\usepackage{xcolor}
 \usepackage{inconsolata}
 \usepackage{tabularx}
 \usepackage{graphicx}
+\usepackage{multirow}
 \definecolor{dkgreen}{rgb}{0,.6,0}
 \definecolor{dkblue}{rgb}{0,0,.6}
 \definecolor{dkyellow}{cmyk}{0,0,.8,.3}
+\renewcommand{\rmdefault}{phv} % Arial
+\renewcommand{\sfdefault}{phv} % Arial
 
 \lstset{
-	language        = php,
-	basicstyle      = \small\ttfamily,
-	keywordstyle    = \color{dkblue},
-	stringstyle     = \color{red},
-	identifierstyle = \color{dkgreen},
-	commentstyle    = \color{gray},
-	emph            =[1]{php},
-	emphstyle       =[1]\color{black},
-	emph            =[2]{if,and,or,else},
-	emphstyle       =[2]\color{dkyellow}}
+	numbers=left,
+	stepnumber=1,
+	firstnumber=1,
+	numberstyle=\tiny,
+	extendedchars=true,
+	breaklines=true,
+	frame=single,
+	showstringspaces=false,
+	xleftmargin=2.5em,
+	framexleftmargin=2em,
+	basicstyle=\scriptsize,
+}
+
 
 
 %Podem utilizar GEOMETRY{...} para realizar pequenos ajustes das margens. Onde, left=esquerda, right=direita, top=superior, bottom=inferior. P.ex.:
@@ -59,8 +66,8 @@
 \nivel{Graduação} % [Graduação] ou [Mestrado] ou [Doutorado]
 \titulacao{Bacharel} % [Tecnólogo] ou [Bacharel] ou [Engenheiro] ou [Mestre] ou [Doutor]
 
-\titulo{Um modelo para a criação, divulgação e monetização de conteúdos dinâmicos com ênfase em viralizações} % titulo do trabalho em portugues
-\title{A model for the creation, disclosure and monetization of dynamic content with an emphasis on viralization} % titulo do trabalho em ingles
+\titulo{Sistema para a criação, divulgação e monetização de conteúdos dinâmicos com ênfase em viralizações} % titulo do trabalho em portugues
+\title{Software for the creation, disclosure and monetization of dynamic content with an emphasis on viralization} % titulo do trabalho em ingles
 
 \autor{Fabricio Jhonata Sousa de Oliveira} % autor do trabalho
 \cita{OLIVEIRA, Fabricio} % sobrenome (maiusculas), nome do autor do trabalho
@@ -113,12 +120,12 @@
 	
 	%resumo (OBRIGATÓRIO)
 	\begin{resumo}
-	%Texto do resumo (m\'aximo de 500 palavras).
+Atualmente as redes sociais fazem parte do dia-a-dia da maioria das pessoas. Seria difícil imaginar passar um único dia sem a utilização desses serviços. Dentro destas plataformas existem diversos usuários que atuam como criadores de conteúdos, tendo miliares ou até milhões de seguidores que acompanham suas publicações. Alguns dos conteúdos publicados por esses criadores geram uma grande empatia entre os usuários, fazendo com que o conteúdo seja compartilhado por miliares de pessoas. Porém algumas redes sociais, ainda não oferecem uma forma integrada de monetização de conteúdo, no entretanto, quando o conteúdo é publicado em forma \textit{link} é possível monetiza-lo, pois, o conteúdo em si estará fora da rede social. Desta forma o objetivo desse trabalho é  desenvolver um sistema \textit{web}, capaz de auxiliar na criação, divulgação e monetização de conteúdos em forma de \textit{link}, que permitem a interação com o usuário que o acessa, resultando em uma imagem personalizada, a partir dos dados do \textit{Facebook} do usuário.
 	\end{resumo}
 	
 	%abstract (OBRIGATÓRIO)
 	\begin{abstract}
-	%Abstract ... (maximum of 500 words).
+	Today social networks are part of everyday life for most people. It would be difficult to imagine spending a single day without using these services. Within these platforms there are several users who act as creators of content, having milestones or even millions of followers who accompany their publications. Some of the content published by these creators generates a great empathy among users, causing the content to be shared by thousands of people. But some social networks do not yet provide an integrated form of content monetization, however, when content is published in link form it is possible to monetize it, so the content itself will be outside the social network. In this way the objective of this work is to develop a web system, able to assist in the creation, dissemination and monetization of contents in the form of link, that allow the interaction with the user that accesses it, resulting in a custom image, from the user's Facebook data.
 	\end{abstract}
 	
 	% listas (opcionais, mas recomenda-se a partir de 5 elementos)
@@ -137,11 +144,17 @@
 	%---------- Fundamentação
 	\include{./Capitulos/capitulo2}
 
-	%---------- Proposta
+	%---------- Ferramentas de desenvolvimento
 	\include{./Capitulos/capitulo3}
 	
-	%---------- Cronograma
+	%---------- Proposta
+	\include{./Capitulos/capitulo4}
+	
+	%---------- Arquitetura
 	\include{./Capitulos/capitulo5}
+	
+	%---------- Cronograma e Conclusão
+	\include{./Capitulos/capitulo6}
 	
 	
 	%---------- Referencias ----------

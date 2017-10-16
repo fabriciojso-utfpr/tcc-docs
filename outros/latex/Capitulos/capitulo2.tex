@@ -2,12 +2,12 @@
 % CAPÍTULO 2
 \chapter{FUNDAMENTAÇÃO TEÓRICA}  
 \section{Web 2.0}
-Uma das definições de \textit{Web} 2.0 é descrita por \cite{Oreilly2007}, que define que a partir da Web 2.0 a \textit{Internet} passou ser considerada uma plataforma social. Pois a partir da Web 2.0 os serviços começaram a permitir que os usuários não apenas o consumam informações, mas também criem o seus próprios conteúdos, dando origem a esta plataforma social. \cite{AmyShuen2008}. 
+\citeauthor{Oreilly2007} define que a partir da \textit{web} 2.0 a \textit{Internet} passou ser considerada uma plataforma social, permitindo que os usuários não apenas o consumam informações, mas também criem o seus próprios conteúdos. \cite{AmyShuen2008}. 
 
-A  \textit{Web} 2.0 remete a um novo formato de ferramentas e serviços, que permitem aos usuários publicar informações na \textit{web}, já que anteriormente essa prática era feita apenas por empresas, profissionais da área e entusiastas. Portanto, a principal característica das funcionalidades que surgiram com a \textit{Web} 2.0, foi a possibilidade de serem utilizadas para compartilhar informações na \textit{web}, como por exemplo, comentar em uma postagem, compartilhar sua opinião em uma rede social, entre outros. Esses conceitos foram a base para o surgimento de  \textit{blogs}, redes sociais, entre outros. As principais características da \textit{Web} 2.0 são a identidade, presença, comunicação, relacionamento e troca de informações, na qual, a finalidade é aumentar e estimular a participação dos usuários na  \textit{Internet}, fazendo com que os serviços \textit{web} se tornem cada vez melhores quanto mais usados por seus usuários. \cite{Cooke2008}
+A \textit{web} 2.0 remete a um novo formato de ferramentas e serviços, que permitem aos usuários publicar informações na \textit{web}, já que anteriormente essa prática era feita apenas por empresas, profissionais da área e entusiastas. Esses conceitos foram a base para o surgimento de  \textit{blogs}, redes sociais, entre outros. Suas principais características são a identidade, presença, comunicação, relacionamento e troca de informações, na qual, a finalidade é aumentar e estimular a participação dos usuários na  \textit{Internet}, fazendo com que os serviços se tornem cada vez melhores quanto mais usados por seus usuários. \cite{Cooke2008}
 
 \section{FACEBOOK}
-Com surgimento da \textit{Web} 2.0, os avanços tecnológicos, o surgimento dos dispositivos móveis, e preços acessíveis a \textit{Internet} de alta velocidade, as redes sociais se tornaram parte do dia-a-dia de muitos indivíduos. As redes sociais são \textit{sites} que contém ferramentas para que seus usuários se comuniquem, compartilhem conhecimentos, ideias, interesses e informações pessoais como: fotos, vídeos, relacionamentos, e outros. As redes sociais são uma das grandes mídias de influencia da atualidade, já que os seus usuários além de leitores, são também os produtores de conteúdo \cite{Abedniya2010, Trusov2009}.
+Com surgimento da \textit{web} 2.0, os avanços tecnológicos, o surgimento dos dispositivos móveis, e preços acessíveis a \textit{Internet} de alta velocidade, as redes sociais se tornaram parte do dia-a-dia de muitos indivíduos. Esse tipo serviço são plataformas ou aplicativos que disponibilizam ferramentas para que seus usuários se comuniquem, compartilhem conhecimentos, ideias, interesses e informações pessoais como: fotos, vídeos, relacionamentos, e outros. As redes sociais são uma das grandes mídias de influencia da atualidade, já que os seus usuários além de leitores, são também os produtores de conteúdo \cite{Abedniya2010, Trusov2009}.
 
 O crescimento acelerado das redes sociais, resultou na facilidade para a obtenção de dados dos usuários, fazendo com que seja possível a criação de produtos e serviços personalizados, como por exemplo, verificar se um usuário cursa o ensino superior e oferecer ou não uma conta-corrente universitária para o mesmo \cite{Hartline2008}.
 
@@ -15,36 +15,40 @@ O \textit{Facebook} é uma rede social que foi lançada em Fevereiro de 2004 e atu
 
 
 \subsection{FACEBOOK LOGIN}
-O \textit{Facebook Login}\footnote[3]{https://developers.facebook.com/docs/facebook-login/} facilita o processo de autenticação em diversos tipos de aplicações, como por exemplo, aplicativos nativos \textit{Android}, IOS e também para aplicações \textit{web}. Uma de suas funcionalidades mais atrativas, além da praticidade do \textit{login} através de um clique, são seus diversos recursos de segurança, que auxiliam os usuários a controlar quais dados eles desejam compartilhar. Na Figura \ref{autenticacao2} contém um exemplo de como é feito esse auxilio, na qual, ele permite que os usuários selecionem o que eles desejam ou não compartilhar com o serviço que se esta autenticando. 
-
+O \textit{Facebook Login}\footnote[3]{https://developers.facebook.com/docs/facebook-login/} facilita o processo de autenticação em diversos tipos de aplicações, como por exemplo, aplicativos nativos \textit{Android}, IOS e também para aplicações \textit{web}. Uma de suas funcionalidades mais atrativas, além da praticidade do \textit{login} através de um clique, são seus diversos recursos de segurança, que auxiliam os usuários a controlar quais dados eles desejam compartilhar. Na Figura \ref{autenticacao2} destaca-se um exemplo de como é feito esse auxilio, na qual, permite-se que os usuários selecionem o que será ou não compartilhado.
 \begin{figure}[!htb]
 	\centering
 	\includegraphics[width=1\textwidth]{./Figuras/autenticacao.png} % <- formatos PNG, JPG e PDF
-	\caption[Exemplo da autenticação com o Facebook Login]{Exemplo de autenticação com o uso do  \textit{Facebook Login}\footnote[3]{https://developers.facebook.com/docs/facebook-login/}. No lado esquerdo é a tela inicial, já do lado direito é após acessar a opção "editar isso", onde é possível selecionar quais dados ou permissões é permitido que a aplicação acesse.}
+	\caption[Exemplo da autenticação com o Facebook Login]{Exemplo de autenticação com o uso do  \textit{Facebook Login}}
 	\fonte{Autoria própria}
 	\label{autenticacao2}
 \end{figure}
 
+No lado esquerdo da Figura \ref{autenticacao2}  é a tela inicial, já do lado direito é após acessar a opção ``editar isso'', onde é possível selecionar quais dados ou permissões é permitido que a aplicação acesse.
 
-O \textit{Facebook Login} é um serviço que utiliza o \textit{Auth 2.0}\footnotetext[4]{\textit{Auth 2.0} é um protocolo aberto para permitir a autorização segura, num método simples e padronizado, a aplicações \textit{web}, móveis e \textit{desktop}} para autenticação e autorização com o uso do \textit{Login Dialog} (Janela de diálogo que permite ao usuário se autenticar e autorizar o que a aplicação pode acessar ou não acessar, como na Figura \ref{autenticacao2}). Após o usuário realizar a autenticação, o \textit{Facebook Login} irá retornar as permissões que foram aprovadas pelo usuário e um \textit{token} de acesso. Com esse \textit{token} será possível consultar e interagir com os dados desse usuário, através da  \textit{Graph API}\footnote[4]{https://developers.facebook.com/docs/graph-api/overview/} , que será detalhada no próximo tópico.
+O \textit{Facebook Login} é um serviço que utiliza o \textit{Auth 2.0}\footnotetext[4]{\textit{Auth 2.0} é um protocolo aberto para permitir a autorização segura, num método simples e padronizado, a aplicações \textit{web}, móveis e \textit{desktop}} para autenticação e autorização com o uso do \textit{Login Dialog} (janela de diálogo que permite ao usuário se autenticar e autorizar o que a aplicação pode acessar ou não acessar, como na Figura \ref{autenticacao2}). Após o usuário realizar a autenticação, o \textit{Facebook Login} irá retornar as permissões que foram aprovadas pelo usuário e um \textit{token} de acesso. Com esse \textit{token} será possível consultar e interagir com os dados desse usuário, através da  \textit{Graph API}\footnote[5]{https://developers.facebook.com/docs/graph-api/overview/} , que será detalhada na subseção \ref{graphapi}.
 
 
-\subsection{FACEBOOK GRAPH API}
-A \textit{Graph API}\footnote[4]{https://developers.facebook.com/docs/graph-api/overview/} é a principal forma de incluir e excluir dados na plataforma do \textit{Facebook}. A \textit{Graph API}  é uma API Restful (baseada em HTTP), com isso é possível funcionar em qualquer linguagem que tenha a possibilidade de enviar requisições HTTP, ou até mesmo a partir de um navegador web. Com a \textit{Graph API}  é possível  consultar dados, realizar publicações, gerenciar anúncios, publicar fotos entre outros. Com a ferramenta "Explorador da \textit{Graph API}", é possível inserir ou gerar um token, informar quais dados que sejam retornados e visualiza-los em JSON, como mostra a figura \ref{graph}. Essa API será utilizada para o desenvolvimento dessa proposta, para que seja possível acessar os dados dos usuários que estão interagindo com a aplicação web.
-
+\subsection{FACEBOOK GRAPH API}\label{graphapi}
+A \textit{Graph API} é a principal forma de incluir e excluir dados na plataforma do \textit{Facebook}. A \textit{Graph API}  é uma \sigla{API}{Application Programming Interface} \sigla{REST}{Representational State Transfer} (baseada em \sigla{HTTP}{Hypertext Transfer Protocol}), com isso, é possível utiliza-la em qualquer linguagem que tenha a possibilidade de enviar requisições HTTP, ou até mesmo a partir de um navegador \textit{web}. Com a \textit{Graph API}  é possível  consultar dados, realizar publicações, gerenciar anúncios, publicar fotos entre outros. Com a ferramenta Explorador da \textit{Graph API}, é possível inserir ou gerar um \textit{token}, informar quais dados que sejam retornados e visualiza-los em \sigla{JSON}{JavaScript Object Notation}, como mostra a Figura \ref{graph}. Essa API será utilizada para o desenvolvimento deste trabalho, para que seja possível acessar os dados dos usuários que estão interagindo com a aplicação \textit{web}.
+\pagebreak
 \begin{figure}[!htb]
 	\centering
 	\includegraphics[width=1\textwidth]{./Figuras/graph-api.png} % <- formatos PNG, JPG e PDF
-	\caption[Exemplo do explorador da \textit{Graph API}]{Exemplo do explorador da \textit{Graph API}}
+	\caption[Exemplo do explorador da \textit{Graph API}]{Exemplo do explorador da \textit{Graph API}.}
 	\fonte{Autoria própria}
 	\label{graph}
 \end{figure}
 
-\pagebreak
+Na Figura \ref{graph} pode-se observar que foi inserido um \textit{token}, no campo, \textit{token} de acesso, e solicitado de resposta os atributos: \textit{id} e \textit{name}. E a ferramentar retornou o nome e o id do usuário a partir do \textit{token} inserido.
+
+
 
 \subsection{FACEBOOK PAGES}
 
-Um recurso disponibilizado pelo \textit{Facebook}, e de grande importância no contexto deste trabalho é a ferramenta \textit{Facebook Pages}, com ela é possível que um usuário ou empresa desenvolva páginas personalizadas dentro do \textit{Facebook}. Imagine que todos os usuários que estão utilizando a plataforma, ganham de brinde a possibilidade de criarem seu próprio "espaço"{} dentro da rede social. Com uma interface intuitiva, e simples, na qual qualquer pessoa consegue rapidamente criar páginas personalizadas que podem ser classificadas por diversas categorias como por exemplo, negócio ou local,  empresa, organizações ou instituições, marca ou produto, artista, banda, entre outros. Essa ferramenta permite a inserção de imagens, vídeos, textos, \textit{links} e outros. 
+Um recurso disponibilizado pelo \textit{Facebook}, e de grande importância no contexto deste trabalho, é a ferramenta \textit{Facebook Pages}. 
+
+Com essa ferramenta é possível que um usuário ou empresa desenvolva páginas personalizadas dentro do \textit{Facebook}. Imagine que todos os usuários que estão utilizando a plataforma, ganham de brinde a possibilidade de criarem seu próprio ``espaço'' dentro da rede social. Com uma interface intuitiva, e simples, na qual qualquer pessoa consegue rapidamente criar páginas personalizadas que podem ser classificadas por diversas categorias como por exemplo, negócio ou local,  empresa, organizações ou instituições, marca ou produto, artista, banda, entre outros. Essa ferramenta permite a inserção de imagens, vídeos, textos, \textit{links} e outros. 
 
 Também é possível que os usuários do \textit{Facebook} sigam a página, para que eles possam acompanhar suas publicações. Além disso, o \textit{Facebook Pages} permite ser gerenciado por diversos usuários, fazendo com que a administração de uma página seja feita por uma equipe \cite{Facebook}. O \textit{Facebook Pages} permite acessar as estatísticas dos usuários que seguem sua página, com esses dados é possível analisar a faixa-etária, gênero, país, cidade e idioma como mostra a Figura \ref{pages1}. Também é possível ter uma visão geral  da sua página como visualizações, curtidas, alcance, evolvimento e outros como mostra a Figura \ref{pages2}.
 
@@ -61,39 +65,51 @@ Também é possível que os usuários do \textit{Facebook} sigam a página, para que 
 	\centering
 	\includegraphics[width=1\textwidth]{./Figuras/facebook-pages1.png} % <- formatos PNG, JPG e PDF
 	\caption[Facebook Pages - Relatório - Pessoas]{Relatório gerado na ferramenta Facebook Pages: Seguidores da Página}
-	\fonte{Autoria própria (2017), a partir da análise da página Otariano\footnote[2]{https://www.facebook.com/humotariano/}}
+	\fonte{Autoria própria (2017), a partir da análise da página Otariano\footnote[6]{https://www.facebook.com/humotariano/}}
 	\label{pages2}
 \end{figure}
 
-Páginas com milhares seguidores conseguem alcançar milhões de pessoas mensalmente. A Figura \ref{pages2} mostra o alcance da página Otariano\footnote[2]{https://www.facebook.com/humotariano/} de 69 milhões entre 4 de setembro a 1 de outubro. Com todo esse alcance, identificou-se a possibilidade da criação de diversos conteúdos virais (que serão explicados na seção 2.3) ou enviar um grande número de usuários para um \textit{site}, blog ou qualquer serviço \textit{web} que seja acessível a partir de uma conexão com a internet e um acesso por um \textit{link} externo ao Facebook.
+Páginas com milhares seguidores conseguem alcançar milhões de pessoas mensalmente. A Figura \ref{pages2} mostra o alcance da página Otariano\footnote[6]{https://www.facebook.com/humotariano/} de 69 milhões entre 4 de setembro a 1 de outubro. Com todo esse alcance, identificou-se a possibilidade da criação de diversos conteúdos virais (que serão explicados na seção 2.3) ou enviar um grande número de usuários para um \textit{site}, blog ou qualquer serviço \textit{web} que seja acessível a partir de uma conexão com a internet e um acesso por um \textit{link} externo ao  \textit{Facebook}.
+
+
+\subsection{Open Graph}
+Uma característica bem marcante do \textit{Facebook} é a possibilidade dos sistemas \textit{web} poderem interagir com o mesmo, através de uma linguagem aberta, denominada \textit{Open Graph}. Essa linguagem é uma ferramenta que auxilia na integração de uma aplicação \textit{web} com o  \textit{Facebook}, permitindo que seja possível que, quando um usuário compartilhar um  \textit{link}, o rastreador do  \textit{Facebook} irá extrair do HTML as meta \textit{tag} com propriedades do  \textit{Open Graph}, esses dados serão usados para personalizar a postagem do  \textit{link}. Suas principais propriedades são:
+\begin{itemize}
+	\item \textbf{og:title}: Essa propriedade permite definir um título para a publicação;
+	\item \textbf{og:description}: Essa propriedade permite definir uma descrição para a publicação;
+	\item \textbf{og:image}: Essa propriedade permite definir uma imagem para a publicação;
+\end{itemize} 
+
+Um dos objetivos deste trabalho, é auxiliar na criação de \textit{links} que serem divulgados em páginas do \textit{Facebook}, para que inicie o processo de viralização.  A Figura \ref{opengraph} mostra como um \textit{link} é publicado em uma página e como o  \textit{Open Graph} auxilia na personalização desta publicação.
+
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=0.9\textwidth]{./Figuras/open-graph.png} % <- formatos PNG, JPG e PDF
+	\caption[Publicação de um link em uma \textit{Facebook Page}]{Exemplo de publicação de um link em uma \textit{Facebook Page}.}
+	\fonte{Autoria própria}
+	\label{opengraph}
+\end{figure}
+\pagebreak
 
 
 \section{Marketing Viral}
 O termo \textit{Marketing Viral} é usado para descrever estratégias para encorajar usuários de redes sociais a disseminar um conteúdo, fazendo com que a exposição e influência do mesmo seja exponencial \cite{Camarero2011}. 
 
-O marketing viral vem sendo utilizado nas redes sociais, por empresas e organizações que tem como objetivo alcançar e atrair usuários para suas peças publicitárias. A palavra \textit{marketing} remete a ideia de divulgar uma mensagem ou produto. Já a palavra \textit{viral} faz uma analogia com a transmissão de um vírus, que é passada de pessoa pra pessoa de forma rápida de forma exponencial \cite{Barichello2010}.
-Com o uso do Marketing Viral é possível transformar a divulgação de um conteúdo em uma epidemia, pois alguns conteúdos são como vírus, possuem a capacidade de contagiar os usuários. Com o uso das ferramentas de publicação e compartilhamento de conteúdo que as redes sociais disponibilizam, essa epidemia pode se espalhar de forma mais simples e rápida \cite{PEROTTONI2010, Castro2012}.
+O \textit{marketing viral} vem sendo utilizado nas redes sociais, por empresas e organizações que tem como objetivo alcançar e atrair usuários para suas peças publicitárias. A palavra \textit{marketing} remete a ideia de divulgar uma mensagem ou produto. Já a palavra \textit{viral} faz uma analogia com a transmissão de um vírus, que é passada de pessoa pra pessoa de forma rápida de forma exponencial \cite{Barichello2010}.
+Com o uso do \textit{Marketing viral} é possível transformar a divulgação de um conteúdo em uma epidemia, pois alguns conteúdos são como vírus, possuem a capacidade de contagiar os usuários. Com o uso das ferramentas de publicação e compartilhamento de conteúdo que as redes sociais disponibilizam, essa epidemia pode se espalhar de forma mais simples e rápida \cite{PEROTTONI2010, Castro2012}.
 
-Porém a viralização é um fenômeno imprevisível, mesmo com a criação de conteúdos focados para se tornar um viral, e com o uso de ferramentas que auxiliam sua criação, não é possível garanti-la. Criar uma campanha que tome grandes proporções não é algo simples, pois o sucesso do viral depende exclusivamente do público, "Quanto mais envolvente e interessante for a
+Porém a viralização é um fenômeno imprevisível, mesmo com a criação de conteúdos focados para se tornar um \textit{viral}, e com o uso de ferramentas que auxiliam sua criação, não é possível garanti-la. Criar uma campanha que tome grandes proporções não é algo simples, pois o sucesso do viral depende exclusivamente do público, ``Quanto mais envolvente e interessante for a
 mensagem, maiores são as chances de o anúncio se espalhar com sucesso e maior será a rede
-de contatos criada por ele para reenvio da mensagem". Uma das formas de aumentar as chances de um conteúdo viralizar é facilitar o processo de compartilhamento. Caso o conteúdo não esteja publicado em uma rede social, como é o caso de um link de um blog, pode ser necessária a utilização de alguma ferramenta que divulguem o conteúdo em questão, como por exemplo, incluir o botão de compartilhar no \textit{Facebook} junto ao conteúdo. \textit{Marketing Viral} é uma forma de divulgação com um grande alcance e de baixo custo, com a entrega rápida da mensagem desejada para miliares de usuários. \cite{Barichello2010}.
-
-\section{Trabalhos Relacionados}
-Nessa seção será apresentado os trabalhos relacionados com essa proposta. Para isso vamos apresentar uma tabela de comparações entre as ferramentas encontradas. Será comparado se há possibilidade de um criador de conteúdo criar conteúdos monetizados e os tipos de conteúdos que podem ser publicados nas ferramentas relacionadas.
-As ferramentas são o Vonvon\footnote{http://br.vonvon.me/}, Namtests\footnote{https://pt.nametests.com/}, Zip network\footnote{http://zip.network/}, Blasting News\footnote{http://www.blastingnews.com/}, como mostra a tabela abaixo:
-
-\begin{table}[!t]
-	\centering
-	\caption{Tabela comparativa dos trabalhos relacionados}
-	\label{my-label}
-	\begin{tabular}{|l|l|l|}
-		\hline
-		& Possibilidade de criar conteúdos monetizados? & Tipo de Conteúdos   \\ \hline
-		Vonvon        & Não                                                                     & Conteúdos Dinâmicos \\ \hline
-		Nametests        & Não                                                                     & Conteúdos Dinâmicos \\ \hline
-		Zip.network      & Sim                                                                     & Artigos e Noticias  \\ \hline
-		Blasting News    & Sim                                                                     & Artigos e Noticias  \\ \hline
-	\end{tabular}
-\end{table}
+de contatos criada por ele para reenvio da mensagem''. Uma das formas de aumentar as chances de um conteúdo viralizar é facilitar o processo de compartilhamento. Caso o conteúdo não esteja publicado em uma rede social, como é o caso de um \textit{link} de um \textit{blog}, pode ser necessária a utilização de alguma ferramenta que divulguem o conteúdo em questão, como por exemplo, incluir o botão de compartilhar no \textit{Facebook} junto ao conteúdo. \textit{Marketing Viral} é uma forma de divulgação com um grande alcance e de baixo custo, com a entrega rápida da mensagem desejada para miliares de usuários. \cite{Barichello2010}.
 
 \pagebreak
+\section{Trabalhos Relacionados}
+Nessa seção serão apresentados os trabalhos relacionados com essa proposta. 
+\subsection{VONVON}
+O \textit{website} Vonvon\footnote{http://br.vonvon.me/} é um \textit{site} de conteúdos dinâmicos. Por ser um \textit{site} de coreano, seus conteúdos tem em sua maioria usuários asiáticos, porém, está presente em diversos países como: Taiwan, Tailândia, França, Japão, China, Coreia do Sul, Brasil, entre outros.
+Seus conteúdos incluem, jogos, quizz e imagens personalizadas, e todos tem integração com o Facebook. 
+
+\subsection{ZIP NETWORK}
+A plataforma Zip Network\footnote{http://zip.network/} permite que criadores de conteúdo e divulgadores possam monetizar os seus trabalhos.Os criadores de conteúdo criam artigos, notícias e matérias. Já os divulgadores podem escolher uma dessas publicações para divulgar. Cada um recebe uma parte do lucro obtido a partir do trabalho.
+
+Esse trabalho pretende unir a monetização e conteúdo dinâmicos, fazendo com que seja possível a criação de conteúdos dinâmicos de forma monetizada.

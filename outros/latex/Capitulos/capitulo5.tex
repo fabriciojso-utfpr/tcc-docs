@@ -1,4 +1,45 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% CAPÍTULO 5
-\chapter{Cronograma}  
+\chapter{Arquitetura do Sistema}\label{arq}
+Neste capitulo será descrito o funcionamento dos principais componentes que formam a arquitetura do sistema. Toda arquitetura foi desenvolvida pensando em dois tópicos principais: redução de custos e escalabilidade. Para isso foram utilizados diversas tecnologias descritas na sessão de ferramentas e tecnologias. A Figura \ref{visaogeralarq} mostra uma visão geral da arquitetura.
 
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=0.8\textwidth]{./Figuras/arquitetura-visao-geral.png} % <- formatos PNG, JPG e PDF
+	\caption[Visão geral da arquitetura do sistema]{Visão geral da arquitetura do sistema}
+	\fonte{Autoria própria}
+	\label{visaogeralarq}
+\end{figure}
+
+\pagebreak
+Nesse modelo o servidor é a infra-estrutura que hospeda o sistema. Para que o sistema proposto funcione, será necessário que o servidor contenha instalado e configurado o Apache 2.4 e o PHP 7. 
+
+Já o para a criação do servidor será utilizado o serviço da AWS conhecido como \sigla{EC2}{Elastic Compute Cloud}\footnote{https://aws.amazon.com/pt/ec2/} (\textit{Elastic Compute Cloud}). Esse serviço disponibiliza de forma rápida um servidor com o sistema operacional escolhido, cada servidor criado com o EC2 é conhecido como instância. Um das vantagens da utilização do EC2 é sua fácil integração com o balanceador de carga da AWS, chamado de \sigla{ELB}{Elastic Load Balancing}\footnote{https://aws.amazon.com/pt/elasticloadbalancing/} (\textit{Elastic Load Balancing}). 
+
+Para garantir a escalabilidade foi incluído um balanceador de carga na frente dos servidores. Sua função é destinar as requisições para os servidores que estiverem com mais recursos disponíveis no momento. Caso todos os servidores estejam quase sem recursos, o balanceador de carga irá incluir um novo servidor. Caso a média dos recursos de todas instancias ativas estiverem baixas, o balanceador irá remover servidores. Portanto o balanceador de carga irá gerenciar a escalabilidade da aplicação, aumentando ou diminuindo os recursos. Será utilizado o serviço de balanceamento de carga da AWS o ELB.
+
+Além disso é possível configurar um EC2 e ao integra-lo com o ELB, para que ele replique quando necessário uma instância idêntica a pré-definida inicialmente, como mostra a Figura \ref{elb}.
+
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=0.4\textwidth]{./Figuras/elb.png} % <- formatos PNG, JPG e PDF
+	\caption[Exemplo do funcionamento do ELB]{Exemplo do funcionamento do ELB}
+	\fonte{Autoria própria}
+	\label{elb}
+\end{figure}
+
+\pagebreak
+
+Para armazenamento de dados será utilizado um \sigla{SGBD}{Sistema de gerenciamento de banco de dados}, o escolhido para a aplicação será o MySQL. Para provisionar o MySQL vamos utilizar o serviço da AWS chamado \sigla{RDS}{Relational Database Service}\footnote{https://aws.amazon.com/pt/rds/} (\textit{Relational Database Service}), com ele é possível fazer a criação e gerenciamento do banco de dados de forma simples e com alta confiabilidade. Pois o RDS fornece duas coisas muito importantes, o backup de forma automatizada e espalhamento geográfico do banco de dados, garantindo que os dados estejam sempre seguros e disponíveis.
+Porém a cobrança do uso do serviço RDS da AWS é feito a partir de vários fatores, alguns deles são:
+
+\begin{itemize}
+	\item Tipo de instancia que será utilizada no banco de dados (A AWS, fornece diversos tipos de instancias, com mais ou menos memoria, CPU ou rede), onde a AWS cobra por hora;
+	\item Quantidade de dados armazenados em \sigla{GB}{Gigabyte};
+	\item Quantidade de entradas e saídas feitas no banco de dados. 
+\end{itemize} 
+
+
+Para reduzir os custos com o banco de dados e aumentar sua velocidade de resposta, cada consulta enviada ao MySQL, deverá ter seu resultado salvo como \textit{cache} no Redis, para que as próximas consultas não sejam enviadas para o MySQL, mas venha direto do Redis, como mostra a figura \ref{visaogeralarq}. Outra vantagem com a utilização do Redis, é a possibilidade utilizar uma instancia de banco de dados que não tenha muitos recursos, já que as consultas estarão em \textit{cache}, gerando assim poucas saídas do banco de dados e com isso não consumindo muitos recursos do MySQL.
+
+As imagens geradas pelos usuários devem ser salvas. Porém se as imagens forem salvas dentro do EC2, quando o ELB remover um EC2 as imagens que estarão neste servidor serão perdidas. Para solucionar esse problema utilizaremos o serviço de \textit{Storage} da AWS, chamado \sigla{S3}{Simple Storage Service}\footnote{https://aws.amazon.com/pt/s3/} (\textit{Simple Storage Service}), com ele é possível salvar arquivos de diversos tamanhos e formatos na nuvem, e acessa-los via URL, API ou através da linha de comando. O S3 fornece diversos recursos. Um importante para a aplicação é a possibilidade de definir uma data de exclusão para um conjunto de arquivos. Será definido que os arquivos de imagens criados pelos usuários devem ser apagados após 30 dias da sua criação. Fazendo com que o custo de armazenamento de imagens seja reduzido.
+
+A cobrança do S3 é feita por diversos fatores como, quantidade de GB armazenados, quantidade de dados transferidos. Para reduzir o custo de transferência de dados será utilizado um \sigla{CDN}{Content Delivery Network} (\textit{Content Delivery Network}). O CDN ``é uma rede de servidores que armazenam réplicas de arquivos ou conteúdos em memória (\textit{cache}) e depois os entrega aos visitantes, baseando-se na localização geográfica para conectá-los ao servidor mais próximo e mais rápido, reduzindo o tempo de transferência dos dados (latência). O CDN também se comunicará com o servidor de origem para entregar qualquer conteúdo ou arquivo que não tenha sido previamente armazenado em \textit{cache}. Além disso seu uso permite que o site suporte melhor ataques DDoS e mantenha alta disponibilidade, por estar presente simultaneamente em diferentes \textit{datacenters}'' \cite{GoCache2017}. Com isso a transferência de dados com o S3 será feita apenas uma vez por arquivo, reduzindo o custo de transferência de dados. Para essa proposta será utilizado o CDN da empresa Cloudflare\footnote{www.cloudflare.com}, pois eles oferecem esse serviço de forma gratuita.

@@ -1,23 +1,143 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% CAPÍTULO 4
-\chapter{DESENVOLVIMENTO DO PROJETO}  
-\section{TECNOLOGIAS E FERRAMENTAS}
-Para o desenvolvimento da proposta serão utilizadas as seguintes tecnologias e ferramentas: 
+\chapter{Proposta}
+Este capítulo apresenta a proposta de desenvolvimento de um sistema \textit{web}, capaz de auxiliar na criação e divulgação de conteúdos que permitem a interação com o usuário que o acessa, resultando em uma imagem personalizada, a partir dos dados do \textit{Facebook} do usuário. Para facilitar a compreensão utilizaremos o nome de \textbf{aplicativo} para definir este tipo de conteúdo.
 
-\subsection{PHP}
-O sistema será desenvolvido utilizando a linguagem de programação PHP, por ser uma linguagem com foco Web e amplamente consolidada, além da experiência do autor com a mesma.
 
-\subsection{Laravel}
-Será utilizado o framework Laravel para o desenvolvimento do sistema, por ser implementado em PHP e oferecer diversos recursos que serão usados no projeto.
+\section{VISÃO GERAL}
+A proposta desse trabalho é auxiliar na criação, divulgação e monetização de conteúdos dinâmicos. O primeiro passo é a criação do conteúdo, onde será desenvolvido uma ferramenta para auxiliar sua criação, que será descrita em detalhes na seção \ref{gc}. Depois desta parte, o criador de conteúdo irá gerar um  \textit{link} e divulga-lo em sua  \textit{Facebook Page}. A Figura \ref{opengraph} mostra como é a publicação de um \textit{link} em uma \textit{Facebook Page}.
+Os usuários ao ter acesso a publicação feita pelo criador de conteúdo, irão acessar o site e poderão interagir com o conteúdo, resultando em uma imagem personalizada, como é descrito em detalhes na seção \ref{site}. Após esse passo o usuário terá a opção de compartilhar o seu resultado em seu \textit{Facebook}, da mesma forma que foi feito pelo criador de conteúdo, porém agora o conteúdo que ele irá publicar será personalizado com os seus dados. Esse conteúdo publicado poderá ser acessado por seus amigos e iniciar todo o ciclo novamente, abrindo a possibilidade da criação de um \textit{viral}.
 
-\subsection{MySQL}
-O SGBD escolhido foi o MySQL por sua alta performace e facilidade de encontrar materiais didáticos. Tambem por ser integrado com o Framework Laravel.
+\section{GERENCIADOR DE CONTEÚDO}\label{gc}
+O gerenciador de conteúdo será a área na qual os criadores de conteúdo vão inserir os aplicativos. O diagrama de caso de uso geral da Figura \ref{fig:caso-de-uso-gerenciador}, mostra uma visão geral dos atores e funcionalidades desta parte do sistema.
 
-\subsection{Redis}
-Para aumentar a performance do sistema e reduzir os custos de consultas no MySQL, será utilizado um sistema de cache. O Redis foi escolido por sua alta perfomace, disponibilidade e confiabilidade.
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=1\textwidth]{./Figuras/caso-de-uso-gerenciador.png} % <- formatos PNG, JPG e PDF
+	\caption[Caso de uso geral do gerenciador de conteúdo]{Caso de uso geral do gerenciador de conteúdo.}
+	\fonte{Autoria própria}
+	\label{fig:caso-de-uso-gerenciador}
+\end{figure}
+\pagebreak
+Para isso os sistema deve conter os seguintes requisitos funcionais:
+\begin{itemize}
+	\item \textbf{RF1} O sistema deve permitir níveis de acesso, conforme o papel especificado. Os papéis são: administrador ou criador de conteúdo.
+	\item \textbf{RF2}  Os administradores irá realizar todas as atividades que um criador de conteúdo possa realizar;
+	\item \textbf{RF3}  O sistema deve permitir que criadores de conteúdos criem aplicativos;
+	\item \textbf{RF4}  O sistema deve permitir que os administradores possam gerenciar todos os usuários;
+	\item \textbf{RF5}  O sistema deve permitir que os criadores de conteúdo consigam gerar um link para a divulgação.
+\end{itemize}
 
-\subsection{Facebook Login}
-O Facebook Login permitirá que o sistema acesse informações que difíceis de coletar com um formulário de cadastro, como, as curtidas do usuário, o aniversário, a cidade natal ou a cidade atual, lista de amigos e lista de fotos. Com esses dados será possível gerar uma maior sensação de conexão com o sistema. Logo para realizar a autenticação com a rede social, será utilizado o Facebook Login. 
+\subsection{INSERÇÃO DE CONTEÚDO}
+Nessa subseção será mostrado os protótipos de tela do gerenciador de conteúdo, na área de inserção de conteúdo. O protótipo será apresentado simulando a inserção de um aplicativo idêntico ao mostrado na Figura \ref{resultado2}.
 
-\section{METODOLOGIA DE DESENVOLVIMENTO}
--- escrever sobre scrum solo.
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=0.8\textwidth]{./Figuras/resultado.jpg} % <- formatos PNG, JPG e PDF
+	\caption[Exemplo de um resultado de um aplicativo]{Exemplo de um resultado de um aplicativo}
+	\fonte{Autoria própria}
+	\label{resultado2}
+\end{figure}
+\pagebreak
+
+A Figura \ref{tela1}, mostra o protótipo de tela para a inserção dos dados básicos do aplicativo, que são o titulo, texto, imagem de listagem e imagem de chamada. No exemplo abaixo foi simulado a inserção do aplicativo chamado ``6 características suas que são marcantes!'', esse aplicativo será utilizado em toda essa subseção para exemplificar a inserção de conteúdo.
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=0.7\textwidth]{./Figuras/prototipo/tela1.png} % <- formatos PNG, JPG e PDF
+	\caption[Protótipo de tela da inserção dos dados básicos]{Protótipo de tela da inserção dos dados básicos do aplicativo.}
+	\fonte{Autoria própria}
+	\label{tela1}
+\end{figure}
+\pagebreak
+
+A Figura \ref{tela2}, mostra o protótipo de tela para a inserção dos fundos do aplicativo. No exemplo mostrado foi inserido duas imagens e seus filtros são: A imagem em tons de verdade será para o sexo masculino, já a em tons de vermelho será para o sexo feminino.
+
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=1\textwidth]{./Figuras/prototipo/tela2.png} % <- formatos PNG, JPG e PDF
+	\caption[Protótipo de tela da inserção dos fundos do aplicativo]{Protótipo de tela da inserção dos fundos do aplicativo.}
+	\fonte{Autoria própria}
+	\label{tela2}
+\end{figure}
+
+\pagebreak
+
+A Figura \ref{tela3}, mostra o protótipo de tela para a inserção dos fundos do aplicativo. No exemplo mostrado foi inserido duas imagens e seus filtros são: A imagem em tons de verdade será para o sexo masculino, já a em tons de vermelho será para o sexo feminino. Ao selecionar o campo ``Imagem de Fundo'', como mostrado na Figura \ref{tela3}, a foto do usuário irá ficar em baixo dos fundos, resultando em uma imagem arredondada, como foi mostrado na Figura \ref{resultado2}.
+
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=1\textwidth]{./Figuras/prototipo/tela3-1.png} % <- formatos PNG, JPG e PDF
+	\includegraphics[width=1\textwidth]{./Figuras/prototipo/tela3-2.png} % <- formatos PNG, JPG e PDF
+	\caption[Protótipo de tela da inserção das fotos do usuário]{Protótipo de tela da inserção das fotos do usuário no aplicativo.}
+	\fonte{Autoria própria}
+	\label{tela3}
+\end{figure}
+\pagebreak
+
+A Figura \ref{tela4} e \ref{tela41}, mostra o protótipo de tela para a inserção dos fundos do aplicativo. No exemplo mostrado foi inserido duas imagens e seus filtros são: A imagem em tons de verdade será para o sexo masculino, já a em tons de vermelho será para o sexo feminino. A Figura \ref{tela41}, mostra os campos de um grupo de textos preenchidos. Para o exemplo será usado 7 grupos de textos, como mostrado na Figura \ref{tela4}, sendo um grupo para cada balão das imagens de fundo, e um para inserir o nome do usuário. Como mostrado na figura é possível inserir diversos textos em um grupo de texto, porém será selecionado apenas um texto por grupo ao gerar o resultado.
+
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=0.65\textwidth]{./Figuras/prototipo/tela4-1.png} % <- formatos PNG, JPG e PDF
+	\caption[Protótipo de tela da lista de Grupos de Textos inseridos]{Protótipo de tela da lista de Grupos de Textos inseridos.}
+	\fonte{Autoria própria}
+	\label{tela4}
+\end{figure}
+
+
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=1\textwidth]{./Figuras/prototipo/tela4-2.png} % <- formatos PNG, JPG e PDF
+	\includegraphics[width=1\textwidth]{./Figuras/prototipo/tela4-3.png} % <- formatos PNG, JPG e PDF
+	\includegraphics[width=1\textwidth]{./Figuras/prototipo/tela4-4.png} % <- formatos PNG, JPG e PDF
+	\caption[Protótipo de tela da inserção dos Grupos de Textos]{Expansão do item 1 do protótipo de tela da inserção dos Grupos de Textos.}
+	\fonte{Autoria própria}
+	\label{tela41}
+\end{figure}
+\pagebreak
+
+
+\pagebreak
+
+\section{SITE}\label{site}
+O \textit{site} é o sistema \textit{web} que irá interagir com o usuário. Para que essa interação aconteça ele irá ver a publicação do \textit{link} em sua rede social, ao acessar ele irá poder interagir com o sistema. O diagrama de caso de uso geral abaixo mostra uma visão ampla do funcionamento do site.
+
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=1\textwidth]{./Figuras/caso-de-uso-site.png} % <- formatos PNG, JPG e PDF
+	\caption[Caso de uso geral do site]{Caso de uso geral do site.}
+	\fonte{Autoria própria}
+	\label{casodeusogeralsite}
+\end{figure}
+
+Para isso o sistema deve conter os seguintes requisitos funcionais:
+\begin{itemize}
+	\item \textbf{RF6} O sistema deve permitir que os usuários realizem a autenticação a partir do Facebook Login;
+	\item \textbf{RF7}  O sistema deve permitir que o usuário interaja com o aplicativo resultando em uma imagem;
+	\item \textbf{RF8}  O sistema deve permitir que o usuário compartilhe o seu resultado.
+\end{itemize}
+
+
+\subsection{CONSTRUÇÃO DA IMAGEM}
+A construção da imagem é a fase onde o sistema irá integrar os dados do usuário com a
+personalização definida na inserção do aplicativo, na subseção 3.1.1.1. A Figura  \ref{site1} mostra o protótipo da tela de visualização do aplicativo, nele e possível identificar os atributos de visualização (titulo, texto e imagem de chamada) e um espaço para a inclusão de anúncios. O botão ``Ver resultado'' será usado para iniciar o processamento da imagem, iniciando com a autenticação com o \textit{Facebook Login} para ter acesso aos dados como nome, data de aniversário e fotos, para o sistema realizar a construção da imagem.
+
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=1\textwidth]{./Figuras/prototipo/site1.png} % <- formatos PNG, JPG e PDF
+	\caption[Protótipo de tela da visualização do aplicativo]{Protótipo de tela da visualização do aplicativo.}
+	\fonte{Autoria própria}
+	\label{site1}
+\end{figure}
+
+Depois de construir a imagem o sistema irá redirecionar o usuário para visualizar a
+mesma. Nessa tela irá conter a imagem gerada, um botão para gerar novamente e outro para
+que o usuário possa compartilhar em seu \textit{Facebook}, como mostra na Figura \ref{site2}.
+
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=1\textwidth]{./Figuras/prototipo/site2.png} % <- formatos PNG, JPG e PDF
+	\caption[Protótipo de tela da visualização do resultado gerado]{Protótipo de tela da visualização do resultado gerado.}
+	\fonte{Autoria própria}
+	\label{site2}
+\end{figure}
+
+\pagebreak
